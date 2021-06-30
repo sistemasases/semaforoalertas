@@ -622,7 +622,7 @@ function restarAnimateFooterMovil() {
 //Mostrar la definicion de las temasticas en la version movil
 function goToSectionMovil(section, duration , index) {
     $($('.page').get(index)).animate({
-        scrollTop: $(window).height() * section
+        scrollTop: $(document).height() * section
     }, {
         duration: duration
     })
