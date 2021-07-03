@@ -392,6 +392,16 @@ button:focus {
     float: left;   
 }
 
+.hamburger-movil-cerrar-risk {
+    display: flex;
+    box-sizing: initial;
+    line-height: 1;
+    padding-top: 2%;
+    padding-right: 2%;
+    float: right;   
+}
+
+
 .nav-left {
     display: flex;
     align-items: center;
@@ -443,6 +453,16 @@ button:focus {
     background: transparent;
     cursor: pointer;
     font-size: 25px;
+
+}
+
+.hamburger-btn-movil-risk {
+    border: hidden;
+    border-radius: 10px;
+    color: gray;
+    background: transparent;
+    cursor: pointer;
+    font-size: 30px;
 
 }
 
@@ -888,6 +908,15 @@ button:focus {
     left: 5%;
 }
 
+.title-risk-movil {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    position: relative;
+    top:  10%;
+    text-align: center;
+}
+
+
 .text-warning {
     color: #e4d908ef !important;
 }
@@ -1180,7 +1209,7 @@ button:focus {
     .ayuda-image {
         height: 50vh;
        
-     }
+    }
 }
 
 /* VERSIONES MOVILES GRANDES */
@@ -1229,6 +1258,7 @@ button:focus {
         height: 2.8rem;
         width: 2.8rem;
         margin: 4px 5px;
+        background-color: rgb(180, 180, 180);
     }
     .tematicas-nav {
         top: 70px;
@@ -1317,6 +1347,12 @@ button:focus {
         font-size: 20px;
         padding-top: 99.8px;
     }
+    .tematica-nav-btn.active {
+        background: dimgray;
+    }
+    .tematica-nav-btn img {
+        filter: invert(100%) sepia(6%) saturate(100%) hue-rotate(150deg) brightness(100%) contrast(100%) grayscale(1);
+    }
    
 
 
@@ -1330,6 +1366,7 @@ button:focus {
         padding-top: 55px;
     }
     .title {
+        position: fixed;
         top: 0;
         padding-top: 60px;
         font-style: italic; 
@@ -1356,6 +1393,7 @@ button:focus {
         padding: 10px 5px;
     }
     .hamburger-movil {
+        position: fixed;
         top: -15px;
         right: 8.7%;
         padding: 15px 10px;
@@ -1385,6 +1423,7 @@ button:focus {
     .tematica-nav-btn {
         height: 2.8rem;
         width: 2.8rem;
+        background-color: rgb(180, 180, 180);
     }
     .tematicas-nav {
         top: 53px;
@@ -1494,9 +1533,14 @@ button:focus {
     }
     .title-tematica-movil {
         font-size: 20px;
-        padding-top: 78px;
+        padding-top: 75px;
     }
- 
+    .tematica-nav-btn.active {
+        background: dimgray;
+    }
+   .tematica-nav-btn img {
+        filter: invert(100%) sepia(6%) saturate(100%) hue-rotate(150deg) brightness(100%) contrast(100%) grayscale(1);
+   }
 
 
 }
