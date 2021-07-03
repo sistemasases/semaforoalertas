@@ -115,13 +115,15 @@ $(function () {
             }
 
              $('.semaforo-link').off('click')
-             quitRisk()
+            
 
              if (sizeScreen <= 1050) {
                goToSectionMovil(-1, durationAnimation , indexDimension + 1)
+               quitRiskMovil()
              }
              else {
                goToSection(-1, durationAnimation)
+               quitRisk()
              }
              
         })
@@ -136,6 +138,7 @@ $(function () {
         })
 
     })
+
 
     // Nav tematica
     $('.tematica-nav').click(function(event) {
@@ -165,13 +168,13 @@ $(function () {
                 if (sizeScreen > 1050) {
 
                  if ( $('.pop-up-window').css('display') === 'none') {
-                    $('.pop-up-window').fadeIn(1000)
-                    $('.pop-up-window').delay(3000).fadeOut()
+                      $('.pop-up-window').fadeIn(1000)
+                      $('.pop-up-window').delay(3000).fadeOut()
                  }
 
                 }
             }
-                quitRisk()
+               
                 $(this).removeClass('red')
                 $(this).removeClass('yellow')
                 $(this).removeClass('green')
@@ -180,11 +183,14 @@ $(function () {
         if (sizeScreen <= 1050) {
             tematicasFuncionalityMovil(dimensionPrecionada , this , indexTematica,indexDimension)
             goToSectionMovil(indexTematica + 1, durationAnimation , indexDimension + 1)
+            
         }else {
+            quitRisk()
             goToSection(indexTematica + 1, durationAnimation)
+            semaforo(indexTematica , indexDimension , this)
         }
 
-        semaforo(indexTematica , indexDimension , this)
+       
        
     });
     
@@ -252,7 +258,7 @@ $(function () {
         if (id != 'contact-information') {
           event.preventDefault()
         }
-
+       
            
          if (id === 'section') {
             quitRisk()
@@ -268,16 +274,23 @@ $(function () {
     //Hamburger nagevacion cuando se da click en el menu
      $('.hamburger-btn').click(function(event) {
        event.preventDefault()
+       
        $('.tematica-nav').find('.tematica-nav-btn').removeClass("active")
+       $('.semaforo-link').off('click')
+       
+       if (sizeScreen <= 1050) {
+       restarAnimateFooterMovil()
+       goToSectionMovil(-1, durationAnimation , indexDimension + 1)
+       quitRiskMovil()
+       }
+       else {
        $(tematicaPresionada).removeClass('red')
        $(tematicaPresionada).removeClass('yellow')
        $(tematicaPresionada).removeClass('green')
-       $('.semaforo-link').off('click')
-
-
-       restarAnimateFooterMovil()
-       quitRisk()
        goToSection(-1, durationAnimation)
+       quitRisk()
+       }
+     
      })
 
      //hamburger movil dimensiones

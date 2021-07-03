@@ -8,6 +8,7 @@ function screenResponsiveWebDesing() {
      linkAses         = $('map').find('#link-ases')
      pressFooter = false;
      starPage = false
+     startSemaforo = false
      //viene la magia
 
      //Adapatacíon de los enlaces de la imagen de la universida
@@ -209,6 +210,12 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
         $('#semaforo-item-4').hide()
         $('#semaforo-item-5').hide()
         $('#semaforo-item-6').hide()
+        $('#semaforo-item-7').hide()
+        $('#semaforo-item-8').hide()
+        $('#semaforo-item-9').hide()
+        $('#semaforo-item-10').hide()
+        $('#semaforo-item-11').hide()
+        $('#semaforo-item-12').hide()
         $('.tematica-nav-btn').css({
              'height':'2.8rem',
              'width':'2.8rem'
@@ -257,7 +264,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
         $('.title').css({
             'display': 'flex',
             'font-size': '20px',
-            'left': '51%'
+            'left': '54%'
         })
 
         if (sizeScreenWidth <= 280) {
@@ -279,21 +286,44 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 
                  if ( 
                       sizeScreenHeigth <= 800 && 
-                      sizeScreenHeigth >  650) {
+                      sizeScreenHeigth >  653) 
+                {
 
                  $('.tematica-nav-btn').css({
                      'height':'2.4rem',
                      'width':'2.6rem'
                  })
 
+                 $('.tematicas-dimension-movil').css({
+                     'right': '10%'
+                 })
+
                 }
-                else if (sizeScreenHeigth <= 650) {
+                else if (sizeScreenHeigth <= 653 &&
+                         sizeScreenHeigth > 556 ) 
+                {
                
                 $('.tematica-nav-btn').css({
                      'height':'2rem',
                      'width':'2.4rem'
                 })
 
+                $('.tematicas-dimension-movil').css({
+                     'right': '10%'
+                 })
+
+                }
+                else {
+                                 
+                $('.tematica-nav-btn').css({
+                     'height':'1.8rem',
+                     'width':'2.2rem'
+                })  
+
+                $('.tematicas-dimension-movil').css({
+                     'top': '120px',
+                     'right': '10%'
+                })
                 }
                
 
@@ -361,7 +391,9 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
         $('#tematicas-movil').addClass('title-tematica-movil')
         $('#tematicas-movil').removeClass('title-tematicas')
         $('#tematicas-movil').text(tituloTematica)
-  
+
+        quitRiskMovil()
+        semaforoMovil(tematicaPresionada)
         restarAnimateFooterMovil()
         switch (NombreDimension) {
 
@@ -445,7 +477,7 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                                  'width': '300px',
                                  'right': '-10%',
                                  'font-size': '13px',
-                                 'padding-top':'85px',
+                                 'padding-top':'83px',
                             
                             })
                         }
@@ -456,7 +488,7 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                                  'width': '270px',
                                  'right': '-10%',
                                  'font-size': '13px',
-                                 'padding-top':'85px',
+                                 'padding-top':'83px',
                             
                         })
 
@@ -502,8 +534,8 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
 
                         if ( indexTematica === 0 ||
                              indexTematica === 1 ||
-                             indexTematica === 2 ||
-                             indexTematica === 5  ) {
+                             indexTematica === 2 
+                           ) {
 
                             $('.title-tematica-movil').css({
                                'width': '170px',
@@ -513,6 +545,15 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
 
                             })
 
+                        }
+                        else if ( indexTematica === 5 ) {
+                            $('.title-tematica-movil').css({
+                               'width': '160px',
+                               'right': '23%',
+                               'font-size': '10.5px',
+                               'padding-top': '60px'
+
+                            })    
                         }
                         else  {
 
@@ -561,6 +602,12 @@ function inicioMovil() {
         $('#semaforo-item-4').show()
         $('#semaforo-item-5').show()
         $('#semaforo-item-6').show()
+        $('#semaforo-item-7').show()
+        $('#semaforo-item-8').show()
+        $('#semaforo-item-9').show()
+        $('#semaforo-item-10').show()
+        $('#semaforo-item-11').show()
+        $('#semaforo-item-12').show()
 
         if ( sizeScreenWidth  <= 500 &&  sizeScreenWidth  > 375) {
         $('.semaforo').css({'left': '-4%'})
@@ -626,4 +673,25 @@ function goToSectionMovil(section, duration , index) {
     }, {
         duration: duration
     })
+}
+
+// quitar la zona de riesgo en la version movil
+function quitRiskMovil() {
+
+    $('.tematica').show()
+    $('.descriptores').hide()
+    $('#circle-red').attr({'stroke': '' , 'stroke-width':0})
+    $('#circle-yellow').attr({'stroke': '' , 'stroke-width':0})
+    $('#circle-green').attr({'stroke': '' , 'stroke-width':0})
+    $('.green-circle').css('fill','#94b33c')
+    $('.yellow-circle').css('fill','#f3eb3b')
+    $('.red-circle').css('fill','#ef3a2d')
+    $('.corner-menu').css({'padding-left': '30px'})
+    $('.tematica-nav').removeClass('red')
+    $('.tematica-nav').removeClass('yellow')
+    $('.tematica-nav').removeClass('green')
+    $('.semaforo').css({
+       'left': '-25%'
+    })
+
 }
