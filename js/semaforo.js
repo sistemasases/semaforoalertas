@@ -212,10 +212,15 @@ function semaforoMovil(tematicaPresionada) {
         anteriorId = id
 
         $('.tematica').fadeOut()
-        $('.descriptores').fadeIn()
+        $('.descriptores').delay(300).fadeIn()
         $('.descriptores').css('border-color', colors[id])
         $('.corner-menu').css({'padding-left' : '80px'})
         $('.semaforo').css({'left': '-14%'})
+        $('.tematicas-dimension-movil').slideUp()
+        $('.tematicas-dimension-familiar').slideUp()
+        $('.tematicas-dimension-academica').slideUp()
+        $('.tematicas-dimension-economica').slideUp()
+        $('.tematicas-dimension-vidaU').slideUp()
         $('.descriptor').hide()
         if (startSemaforo === false) {
             startSemaforo = true

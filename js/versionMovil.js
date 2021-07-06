@@ -67,6 +67,7 @@ function screenResponsiveWebDesing() {
 
      // adaptacion de la imagen de ayudad a pantallas menores o iguales a 280px de ancho
      if ( sizeScreenWidth <= 280) {
+
         $('.ayuda-image').css({'height':'30vh'})
         $('.ayuda-information-page-title').css({'font-size':'1.9em' , 'left' : '9%'})
 
@@ -220,10 +221,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
              'height':'2.8rem',
              'width':'2.8rem'
         })
-        //$('.cls-1').hide()        
-        //$('.cls-2').hide()        
-
-
+     
 
         if (starPage === false) {
 
@@ -284,6 +282,8 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                  $('#economica').hide()
                  $('#vidauniversitaria').hide()
 
+               if (sizeScreenHeigth <= 800 ) {
+
                  if ( 
                       sizeScreenHeigth <= 800 && 
                       sizeScreenHeigth >  653) 
@@ -324,6 +324,9 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                      'top': '120px',
                      'right': '10%'
                 })
+
+                }
+
                 }
                
 
