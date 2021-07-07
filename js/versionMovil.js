@@ -67,6 +67,7 @@ function screenResponsiveWebDesing() {
 
      // adaptacion de la imagen de ayudad a pantallas menores o iguales a 280px de ancho
      if ( sizeScreenWidth <= 280) {
+
         $('.ayuda-image').css({'height':'30vh'})
         $('.ayuda-information-page-title').css({'font-size':'1.9em' , 'left' : '9%'})
 
@@ -105,8 +106,8 @@ function screenResponsiveWebDesing() {
             if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
 
             $('.contact-information').css ({
-               'font-size':'10px',
-               'padding': '23px 35px'
+               'font-size':'0.7em',
+               'padding': '3% 10%'
             })
 
             $('.logo-ases').css({
@@ -123,8 +124,8 @@ function screenResponsiveWebDesing() {
 
             
             $('.contact-information').css ({
-               'font-size':'9.5px',
-               'padding': '20px 35px'
+               'font-size':'0.6em',
+               'padding': '4% 12%'
             })
 
             if (sizeScreenWidth < 321) {
@@ -220,10 +221,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
              'height':'2.8rem',
              'width':'2.8rem'
         })
-        //$('.cls-1').hide()        
-        //$('.cls-2').hide()        
-
-
+     
 
         if (starPage === false) {
 
@@ -284,6 +282,8 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                  $('#economica').hide()
                  $('#vidauniversitaria').hide()
 
+               if (sizeScreenHeigth <= 800 ) {
+
                  if ( 
                       sizeScreenHeigth <= 800 && 
                       sizeScreenHeigth >  653) 
@@ -324,6 +324,9 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                      'top': '120px',
                      'right': '10%'
                 })
+
+                }
+
                 }
                
 
@@ -558,7 +561,7 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                         else  {
 
                             $('.title-tematica-movil').attr({
-                            'style' : 'right: 29%; font-size:20px; padding-top: 78px; '
+                                'style' : 'right: 29%; font-size:20px; padding-top: 78px; '
                             })
 
                         }
@@ -633,9 +636,9 @@ function restarAnimateFooterMovil() {
         $('.hamburger-movil-cerrar').fadeOut(100)
 
         $('.contact-information').css ({
-               'font-size':'12px',
+               'font-size':'0.9em',
                'padding': '0'
-            })
+        })
 
 
         if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
@@ -674,6 +677,7 @@ function goToSectionMovil(section, duration , index) {
         duration: duration
     })
 }
+
 
 // quitar la zona de riesgo en la version movil
 function quitRiskMovil() {

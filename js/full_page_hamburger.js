@@ -24,6 +24,7 @@ document.querySelector("#back-btn").addEventListener('click', function() {
 
 function inicio() {
 
+    sizeScreenWidth  = $(window).width()
     inicioMovil()
     
     $('.title').text('INICIO')
@@ -54,9 +55,14 @@ function inicio() {
     $('.green-circle').css('fill','#94b33c')
     $('.yellow-circle').css('fill','#f3eb3b')
     $('.red-circle').css('fill','#ef3a2d')
+
+    if (sizeScreenWidth > 1050) {
+
     $('div').remove('.text-danger')
     $('div').remove('.text-warning')
     $('div').remove('.text-success')
+    
+    }
 }
 
 $('.menu-item').on('click', function(e) {
