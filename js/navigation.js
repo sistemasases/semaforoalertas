@@ -279,11 +279,13 @@ $(function () {
        $('.semaforo-link').off('click')
        
        if (sizeScreen <= 1050) {
-
+       
+       if ( $('#inicio').hasClass('active') ) {
        $('#tematicas-movil').addClass('title-tematicas')
        $('#tematicas-movil').removeClass('title-tematica-movil')
        $('#tematicas-movil').attr({style : 'display: flex;'})
        $('#tematicas-movil').text('Tematicas')
+       }
        restarAnimateFooterMovil()
        goToSectionMovil(-1, durationAnimation , indexDimension + 1)
        quitRiskMovil()
