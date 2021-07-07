@@ -106,8 +106,8 @@ function screenResponsiveWebDesing() {
             if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
 
             $('.contact-information').css ({
-               'font-size':'10px',
-               'padding': '23px 35px'
+               'font-size':'0.7em',
+               'padding': '3% 10%'
             })
 
             $('.logo-ases').css({
@@ -124,8 +124,8 @@ function screenResponsiveWebDesing() {
 
             
             $('.contact-information').css ({
-               'font-size':'9.5px',
-               'padding': '20px 35px'
+               'font-size':'0.6em',
+               'padding': '4% 12%'
             })
 
             if (sizeScreenWidth < 321) {
@@ -561,7 +561,7 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                         else  {
 
                             $('.title-tematica-movil').attr({
-                            'style' : 'right: 29%; font-size:20px; padding-top: 78px; '
+                                'style' : 'right: 29%; font-size:20px; padding-top: 78px; '
                             })
 
                         }
@@ -636,9 +636,9 @@ function restarAnimateFooterMovil() {
         $('.hamburger-movil-cerrar').fadeOut(100)
 
         $('.contact-information').css ({
-               'font-size':'12px',
+               'font-size':'0.9em',
                'padding': '0'
-            })
+        })
 
 
         if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
@@ -677,6 +677,7 @@ function goToSectionMovil(section, duration , index) {
         duration: duration
     })
 }
+
 
 // quitar la zona de riesgo en la version movil
 function quitRiskMovil() {
