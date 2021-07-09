@@ -250,7 +250,7 @@ function semaforoMovil(tematicaPresionada) {
 
         $('#red , #yellow , #green').attr({
             'style' : 
-            'padding-top: 14%;'+
+            'padding-top: 5%;'+
             'padding-left: 30%;'
         })
 

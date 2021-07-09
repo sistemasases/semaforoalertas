@@ -102,7 +102,6 @@ $(function () {
 
         id = $(this).attr("href");
         title = $(this).find('.dimension-btn').attr('title')
-        $('.title').text(title.toUpperCase())
         $('.dimension').each(function (e) {
             if ($(this).attr("href") != id) {
                 $(this).find('.dimension-btn').removeClass("active")
@@ -118,10 +117,12 @@ $(function () {
             
 
              if (sizeScreen <= 1050) {
+               $('.title-movil').text(title.toUpperCase())
                goToSectionMovil(-1, durationAnimation , indexDimension + 1)
                quitRiskMovil()
              }
              else {
+               $('.title').text(title.toUpperCase())
                goToSection(-1, durationAnimation)
                quitRisk()
              }
@@ -280,12 +281,12 @@ $(function () {
        
        if (sizeScreen <= 1050) {
        
-         if ( $('#inicio').hasClass('active') ) {
-           $('#tematicas-movil').addClass('title-tematicas')
-           $('#tematicas-movil').removeClass('title-tematica-movil')
-           $('#tematicas-movil').attr({style : 'display: flex;'})
-           $('#tematicas-movil').text('Tematicas')
-         }
+       if ( $('#inicio').hasClass('active') ) {
+       $('#tematicas-movil').addClass('title-tematicas')
+       $('#tematicas-movil').removeClass('title-tematica-movil')
+       $('#tematicas-movil').attr({style : 'display: flex;'})
+       $('#tematicas-movil').text('Tematicas')
+       }
        restarAnimateFooterMovil()
        goToSectionMovil(-1, durationAnimation , indexDimension + 1)
        quitRiskMovil()
