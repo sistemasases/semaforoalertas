@@ -273,6 +273,21 @@ h1 {
     color: dimgray;
 }
 
+.title-movil {
+    float: none;
+    position: absolute;
+    top: 0;
+    right: 2%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: Roboto, sans-serif;
+    font-style: italic; 
+    font-weight: bold;
+    color: dimgray;
+    padding-top: 85px;
+     
+}
+
 .title-dimension {
     display: none;
     float: none;
@@ -309,7 +324,7 @@ h1 {
     display: flex;
     position: fixed;
     top: 0;
-    right: 29%;
+    right: 15%;
     padding-top: 82px;
     font-family: Roboto, sans-serif;
     font-weight: bold;
@@ -335,8 +350,8 @@ button:focus {
     display: none;
     position: fixed;
     top: 110px;
-    right: 9.5%;
-    padding: 2px;
+    right: 1.9%;
+    padding: 0;
     height: 33.5%;
     width: 62px;
     border-radius: 10px;
@@ -397,7 +412,6 @@ button:focus {
     box-sizing: initial;
     line-height: 1;
     padding-top: 2%;
-    padding-right: 2%;
     float: right;   
 }
 
@@ -719,7 +733,7 @@ button:focus {
 .tematicas-dimension-movil {
     position: fixed;
     top: 170px;
-    right: 10% ;
+    right: 2.9% ;
     float: right;
     display: none;
     list-style: none;
@@ -728,7 +742,7 @@ button:focus {
 .tematicas-dimension-familiar {
     position: fixed;
     top: 170px;
-    right: 10% ;
+    right: 2.9% ;
     float: right;
     display: none;
     list-style: none;  
@@ -737,7 +751,7 @@ button:focus {
 .tematicas-dimension-academica {
     position: fixed;
     top: 170px;
-    right: 10%;
+    right: 2.9%;
     float: right;
     display: none;
     list-style: none;  
@@ -746,7 +760,7 @@ button:focus {
 .tematicas-dimension-economica {
     position: fixed;
     top: 170px;
-    right: 10%;
+    right: 2.9%;
     float: right;
     display: none;
     list-style: none;  
@@ -755,7 +769,7 @@ button:focus {
 .tematicas-dimension-vidaU {
     position: fixed;
     top: 170px;
-    right: 10%;
+    right: 2.9%;
     float: right;
     display: none;
     list-style: none;  
@@ -1215,7 +1229,7 @@ button:focus {
 /* VERSIONES MOVILES GRANDES */
 @media screen and (max-width:500px) and (orientation: portrait)  {
     .title-dimension {
-        right: 5%;
+        right: -3%;
     }
     .title {
         top: 0;
@@ -1224,7 +1238,7 @@ button:focus {
     }
     .title-tematicas {
         padding-top: 222px;
-        padding-right: 4%;
+        padding-right: 0%;
         font-size: 2rem;     
     }
     .dimensiones {
@@ -1239,11 +1253,11 @@ button:focus {
         padding: 15px 10px;
     }
     .hamburger-movil {
-      right: 8%;
+      right: 1%;
     }
     .hamburger-movil-tematica {
         top: 0;
-        right: 8%;
+        right: 1.3%;
         padding-top: 73px;
     }
     .hamburger-btn {
@@ -1361,25 +1375,24 @@ button:focus {
 /* VESION MIVLES PEQUEÑOS Y MEDIANOS */
 @media (max-width:375px) and (orientation: portrait) {
     .title-dimension {
-        right: 5%;
+        right: -5%;
         font-size: 24px;
         padding-top: 55px;
     }
-    .title {
-        position: fixed;
+    .title-movil {
         top: 0;
-        padding-top: 60px;
+        padding-top: 59px;
         font-style: italic; 
     }
     .title-tematicas {
         top: 0;
-        right: 2%;
+        right: -3%;
         padding-top: 175px;
         font-size: 1.7rem;     
     }
     .menu-dimension-movil {
         top: 90px;
-        right: 8%;
+        right: -0.5%;
     }
     .dimensiones {
         padding: 10px 5px;
@@ -1395,12 +1408,12 @@ button:focus {
     .hamburger-movil {
         position: fixed;
         top: -15px;
-        right: 8.7%;
+        right: 1%;
         padding: 15px 10px;
     }
     .hamburger-movil-tematica {
         top: 0;
-        right: 6.6%;
+        right: -0.9%;
         padding-top: 55px; 
     }
     .hamburger-btn {
@@ -1430,23 +1443,23 @@ button:focus {
     }
     .tematicas-dimension-movil {
         top: 140px;
-         right: 9%;
+         right: 1%;
     }
     .tematicas-dimension-familiar {
         top: 140px;
-        right: 9%;
+        right: 1%;
     }
     .tematicas-dimension-economica {
         top: 140px;
-        right: 9%;
+        right: 1%;
     }
     .tematicas-dimension-academica {
         top: 140px;
-        right: 9%;
+        right: 1%;
     }
     .tematicas-dimension-vidaU {
         top: 140px;
-        right: 9%;
+        right: 1%;
     }
     .inicio-title-movil {
         display: block;
@@ -1532,6 +1545,7 @@ button:focus {
         padding-top: 25px;
     }
     .title-tematica-movil {
+        right: 19%;
         font-size: 20px;
         padding-top: 75px;
     }

@@ -191,6 +191,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
         $('.title-tematicas').fadeIn(500)
         $('.hamburger-movil-tematica').fadeIn(500)
         $('.title-tematicas').fadeIn()
+        $('#title-dimension').fadeIn()
         $('.hamburger-movil-tematica').fadeIn()
         $('.semaforo').css({'left': '-25%'})
         $('.corner-menu').css({'padding-left': '30px'})
@@ -249,21 +250,25 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
         }
 
         if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
+
+        $('#title-dimension').removeClass('title')
+        $('#title-dimension').addClass('title-movil')
         $('div .tematica-logo img').css( {'height':'90px'} )
-        $('.title').css({
-            'display': 'flex',
+        $('.title-movil').css({
             'font-size': '25px',
-            'left': '55%'
+            'right': '2%'
         })
 
 
         }
         else if (sizeScreenWidth <= 375) {
+
+        $('#title-dimension').removeClass('title')
+        $('#title-dimension').addClass('title-movil')   
         $('div .tematica-logo img').css( {'height':'90px'} )
-        $('.title').css({
-            'display': 'flex',
-            'font-size': '20px',
-            'left': '54%'
+        $('.title-movil').css({
+            'right': '1%',
+            'font-size': '20px'  
         })
 
         if (sizeScreenWidth <= 280) {
@@ -296,7 +301,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                  })
 
                  $('.tematicas-dimension-movil').css({
-                     'right': '10%'
+                     'right': '4%'
                  })
 
                 }
@@ -310,7 +315,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                 })
 
                 $('.tematicas-dimension-movil').css({
-                     'right': '10%'
+                     'right': '4%'
                  })
 
                 }
@@ -323,7 +328,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 
                 $('.tematicas-dimension-movil').css({
                      'top': '120px',
-                     'right': '10%'
+                     'right': '4%'
                 })
 
                 }
@@ -369,15 +374,15 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                  $('#economica').hide()
 
                  if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
-                  $('.title').css({
+                  $('.title-movil').css({
                       'font-size': '19px',
-                      'left': '50%'
+                      'right': '-5%'
                   })
                   
                  }else {
-                  $('.title').css({
+                  $('.title-movil').css({
                       'font-size': '18px',
-                      'left': '50%'
+                      'right': '-10%'
                   })    
                  }
 
@@ -478,22 +483,16 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                          indexTematica === 3 ) {
 
                             $('.title-tematica-movil').css({
-                                 'width': '300px',
-                                 'right': '-10%',
                                  'font-size': '13px',
                                  'padding-top':'83px',
-                            
                             })
                         }
                         else if ( indexTematica === 1 ||
                                   indexTematica === 2 ) {
 
                             $('.title-tematica-movil').css({
-                                 'width': '270px',
-                                 'right': '-10%',
                                  'font-size': '13px',
                                  'padding-top':'83px',
-                            
                         })
 
                        }
@@ -510,7 +509,7 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                              indexTematica === 2  ) {
 
                             $('.title-tematica-movil').attr({
-                                 'style' : 'right: 29%; font-size:15px; padding-top: 108px; ' 
+                                 'style' : 'font-size:15px; padding-top: 108px; ' 
                           
                             })
 
@@ -519,7 +518,6 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
 
                             $('.title-tematica-movil').css({
                                  'width': '300px',
-                                 'right': '23%',
                                  'font-size': '15px',
                                  'padding-top': '100px'
 
@@ -529,7 +527,7 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                         else {
                         
                             $('.title-tematica-movil').attr({
-                            'style' : 'right: 29%; font-size:20px; padding-top: 99.8px; '
+                            'style' : 'font-size:20px; padding-top: 99.8px; '
                             })
 
                      }
@@ -542,27 +540,25 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
                            ) {
 
                             $('.title-tematica-movil').css({
+                               'right': '13%',
                                'width': '170px',
-                               'right': '23%',
                                'font-size': '15px',
                                'padding-top': '70px'
-
                             })
 
                         }
                         else if ( indexTematica === 5 ) {
                             $('.title-tematica-movil').css({
                                'width': '160px',
-                               'right': '23%',
-                               'font-size': '10.5px',
-                               'padding-top': '60px'
+                               'font-size': '0.75em',
+                               'padding-top': '70px'
 
                             })    
                         }
                         else  {
 
                             $('.title-tematica-movil').attr({
-                                'style' : 'right: 29%; font-size:20px; padding-top: 78px; '
+                                'style' : 'rigth: 19%; font-size:20px; padding-top: 78px; '
                             })
 
                         }
@@ -583,7 +579,8 @@ function inicioMovil() {
      sizeScreenWidth   = $(window).width()
 
      if ( sizeScreenWidth  <= 1050 ) {
-        $('.title').fadeOut()
+        
+        $('#title-dimension').fadeOut()
         $('.title-dimension').fadeIn()
         $('#tematicas-movil').fadeOut()
         $('.hamburger-movil-tematica').fadeOut()
