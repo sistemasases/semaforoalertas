@@ -63,7 +63,7 @@ function quitRisk() {
       $('div').remove('.text-danger')
       $('div').remove('.text-warning')
       $('div').remove('.text-success')
-      if (sizeScreen > 1050) { $('.logo-ases img').css('height','80%') }
+      if (sizeScreenWidth > 1050) { $('.logo-ases img').css('height','80%') }
      
 }
 
@@ -71,7 +71,7 @@ function quitRisk() {
 $(function () {
     durationAnimation = 300;
     waitForAnimation = false;
-    sizeScreen  = $(window).width()
+    sizeScreenWidth  = $(window).width()
     pressHamburgerMovil = false
 
 
@@ -93,7 +93,7 @@ $(function () {
         pressHamburgerMovil = true
 
 
-        if (sizeScreen > 1050) {
+        if (sizeScreenWidth > 1050) {
           indexDimension = $('.dimension').index(this) -5
         }else {
           dimensionFuncionalityMovil( dimensionPrecionada , this)
@@ -116,7 +116,7 @@ $(function () {
              $('.semaforo-link').off('click')
             
 
-             if (sizeScreen <= 1050) {
+             if (sizeScreenWidth <= 1050) {
                $('.title-movil').text(title.toUpperCase())
                goToSectionMovil(-1, durationAnimation , indexDimension + 1)
                quitRiskMovil()
@@ -146,7 +146,7 @@ $(function () {
         event.preventDefault()
 
 
-        if (sizeScreen <= 1050) {
+        if (sizeScreenWidth <= 1050) {
           tematicaDimension = ( ( $(this).parent() ).parent() ).parent()
         }
         else {
@@ -166,7 +166,7 @@ $(function () {
             } else {
                 $(this).find('.tematica-nav-btn').addClass("active")
                 
-                if (sizeScreen > 1050) {
+                if (sizeScreenWidth > 1050) {
 
                  if ( $('.pop-up-window').css('display') === 'none') {
                       $('.pop-up-window').fadeIn(1000)
@@ -181,7 +181,7 @@ $(function () {
                 $(this).removeClass('green')
         })
 
-        if (sizeScreen <= 1050) {
+        if (sizeScreenWidth <= 1050) {
             tematicasFuncionalityMovil(dimensionPrecionada , this , indexTematica,indexDimension)
             goToSectionMovil(indexTematica + 1, durationAnimation , indexDimension + 1)
             
@@ -279,7 +279,7 @@ $(function () {
        $('.tematica-nav').find('.tematica-nav-btn').removeClass("active")
        $('.semaforo-link').off('click')
        
-       if (sizeScreen <= 1050) {
+       if (sizeScreenWidth <= 1050) {
        
        if ( $('#inicio').hasClass('active') ) {
        $('#tematicas-movil').addClass('title-tematicas')

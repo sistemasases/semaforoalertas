@@ -290,8 +290,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 
                if (sizeScreenHeigth <= 800 ) {
 
-                 if ( 
-                      sizeScreenHeigth <= 800 && 
+                 if ( sizeScreenHeigth <= 800 && 
                       sizeScreenHeigth >  653) 
                 {
 
@@ -300,9 +299,20 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                      'width':'2.6rem'
                  })
 
+                 if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
+
                  $('.tematicas-dimension-movil').css({
-                     'right': '4%'
+                     'right': '3.6%'
                  })
+
+                 }
+                 else {
+
+                 $('.tematicas-dimension-movil').css({
+                     'right': '1.5%'
+                 })
+
+                 }
 
                 }
                 else if (sizeScreenHeigth <= 653 &&
@@ -314,22 +324,47 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                      'width':'2.4rem'
                 })
 
+                if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
+
                 $('.tematicas-dimension-movil').css({
-                     'right': '4%'
-                 })
+                     'right': '3.6%'
+                })
+
+                }
+                else {
+
+                $('.tematicas-dimension-movil').css({
+                     'right': '1.5%'
+                })
+
+                }
 
                 }
                 else {
                                  
                 $('.tematica-nav-btn').css({
-                     'height':'1.8rem',
-                     'width':'2.2rem'
+                     'height':'1.5rem',
+                     'width':'2rem'
                 })  
 
+
+                if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
+
                 $('.tematicas-dimension-movil').css({
-                     'top': '120px',
-                     'right': '4%'
+                     'top': '26%',
+                     'right': '5%'
                 })
+
+                }
+                else {
+
+                $('.tematicas-dimension-movil').css({
+                      'top': '26%',
+                     'right': '3.5%'
+                })
+
+                }
+        
 
                 }
 
@@ -681,8 +716,15 @@ function goToSectionMovil(section, duration , index) {
 // quitar la zona de riesgo en la version movil
 function quitRiskMovil() {
 
-    $('.tematica').show()
-    $('.descriptores').hide()
+
+    $('.descriptores').css({'background': 'transparent',
+    'border-color': 'transparent' })
+    $('.tematica').delay(300).fadeIn()
+    $('div .descriptores').fadeOut()
+    $('div #red').hide()
+    $('div #yellow').hide()
+    $('div #green').hide()
+    $('.hamburger-btn-movil-risk').hide()
     $('#circle-red').attr({'stroke': '' , 'stroke-width':0})
     $('#circle-yellow').attr({'stroke': '' , 'stroke-width':0})
     $('#circle-green').attr({'stroke': '' , 'stroke-width':0})
@@ -695,6 +737,9 @@ function quitRiskMovil() {
     $('.tematica-nav').removeClass('green')
     $('.semaforo').css({
        'left': '-25%'
+    })
+    $('.section').css({
+        'padding-bottom': '50%'
     })
 
 }
