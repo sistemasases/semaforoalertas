@@ -212,9 +212,10 @@ function semaforoMovil(tematicaPresionada) {
         anteriorId = id
 
         $('.tematica').fadeOut()
-        $('.descriptores').delay(300).fadeIn()
+        $('div .descriptores').delay(400).fadeIn()
         $('.descriptores').css('border-color', colors[id])
         $('.corner-menu').css({'padding-left' : '80px'})
+        $('.hamburger-btn-movil-risk').show()
         $('.semaforo').css({'left': '-14%'})
         $('.tematicas-dimension-movil').slideUp()
         $('.tematicas-dimension-familiar').slideUp()
@@ -245,7 +246,9 @@ function semaforoMovil(tematicaPresionada) {
             'width': '100%',
             'padding': '0',
             'padding-top': '0',
+            'background': 'white',
             'border-radius':'0'
+
         })
 
         $('#red , #yellow , #green').attr({
@@ -254,6 +257,9 @@ function semaforoMovil(tematicaPresionada) {
             'padding-left: 30%;'
         })
 
+        $('.section').css({
+            'padding-bottom': '55%'
+        })
 
         descriptorColor = $('.descriptor').filter(function(){return $(this).attr('id') == id});
         descriptorColor.css('display', 'flex')

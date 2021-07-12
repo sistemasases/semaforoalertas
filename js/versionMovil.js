@@ -202,9 +202,6 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
         $('.tematica-title').hide()
         $('.tematica-title-little').hide()
         $('#tematicas-movil').show()
-        $('#tematicas-movil').addClass('title-tematicas')
-        $('#tematicas-movil').removeClass('title-tematica-movil')
-        $('#tematicas-movil').text('Tematicas')
         $('#tematicas-movil').attr({'style':'display: block;'})
         $('.tematica-logo').css({'float' : 'left'})
         $('#semaforo-item-1').hide()
@@ -224,6 +221,11 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
              'width':'2.8rem'
         })
      
+        if (booleanParams === false) {
+        $('#tematicas-movil').addClass('title-tematicas')
+        $('#tematicas-movil').removeClass('title-tematica-movil')
+        $('#tematicas-movil').text('Tematicas')
+        }
 
         if (starPage === false) {
 
@@ -290,8 +292,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 
                if (sizeScreenHeigth <= 800 ) {
 
-                 if ( 
-                      sizeScreenHeigth <= 800 && 
+                 if ( sizeScreenHeigth <= 800 && 
                       sizeScreenHeigth >  653) 
                 {
 
@@ -300,9 +301,20 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                      'width':'2.6rem'
                  })
 
+                 if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
+
                  $('.tematicas-dimension-movil').css({
-                     'right': '4%'
+                     'right': '3.6%'
                  })
+
+                 }
+                 else {
+
+                 $('.tematicas-dimension-movil').css({
+                     'right': '1.5%'
+                 })
+
+                 }
 
                 }
                 else if (sizeScreenHeigth <= 653 &&
@@ -314,22 +326,47 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                      'width':'2.4rem'
                 })
 
+                if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
+
                 $('.tematicas-dimension-movil').css({
-                     'right': '4%'
-                 })
+                     'right': '3.6%'
+                })
+
+                }
+                else {
+
+                $('.tematicas-dimension-movil').css({
+                     'right': '1.5%'
+                })
+
+                }
 
                 }
                 else {
                                  
                 $('.tematica-nav-btn').css({
-                     'height':'1.8rem',
-                     'width':'2.2rem'
+                     'height':'1.5rem',
+                     'width':'2rem'
                 })  
 
+
+                if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
+
                 $('.tematicas-dimension-movil').css({
-                     'top': '120px',
-                     'right': '4%'
+                     'top': '26%',
+                     'right': '5%'
                 })
+
+                }
+                else {
+
+                $('.tematicas-dimension-movil').css({
+                      'top': '26%',
+                     'right': '3.5%'
+                })
+
+                }
+        
 
                 }
 
@@ -393,7 +430,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 
 //funcionalidad de las tematicas en version movil
 function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexTematica,indexDimension) {
-
+        
         sizeScreenWidth  = $(window).width()
         tituloTematica = $(tematicaPresionada).attr('title')
 
@@ -402,10 +439,11 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
         $('#tematicas-movil').text(tituloTematica)
 
         quitRiskMovil()
+
         semaforoMovil(tematicaPresionada)
         restarAnimateFooterMovil()
         switch (NombreDimension) {
-
+               
             case '#individual':
                  $('.tematicas-dimension-movil').slideUp(300)
                
@@ -681,8 +719,15 @@ function goToSectionMovil(section, duration , index) {
 // quitar la zona de riesgo en la version movil
 function quitRiskMovil() {
 
-    $('.tematica').show()
-    $('.descriptores').hide()
+
+    $('.descriptores').css({'background': 'transparent',
+    'border-color': 'transparent' })
+    $('.tematica').delay(300).fadeIn()
+    $('div .descriptores').fadeOut()
+    $('div #red').hide()
+    $('div #yellow').hide()
+    $('div #green').hide()
+    $('.hamburger-btn-movil-risk').hide()
     $('#circle-red').attr({'stroke': '' , 'stroke-width':0})
     $('#circle-yellow').attr({'stroke': '' , 'stroke-width':0})
     $('#circle-green').attr({'stroke': '' , 'stroke-width':0})
@@ -696,5 +741,195 @@ function quitRiskMovil() {
     $('.semaforo').css({
        'left': '-25%'
     })
+    $('.section').css({
+        'padding-bottom': '50%'
+    })
 
 }
+
+
+//encargada de capturar los parametros y luego cargar la pagina con ese parametro
+function redirectUrlToDimensionOrThematic() {
+
+    var searchParamsUrl = window.location.search
+    var urlParams = new URLSearchParams(searchParamsUrl)
+    var dimensionUrl = urlParams.get('dim')
+    var thematicUrl = urlParams.get('tem')
+
+    var arrayDimension = []
+    var arrayDimensionObjects = []
+    var arraythematic  = []
+
+    $('.dimension').each(function(index,value) {
+       if (index < 5) {
+       arrayDimension.push( ( ( $(value).attr('href') ).replace('#','') ).toLowerCase() )
+       arrayDimensionObjects.push(value)
+       }
+    })
+
+    $('.tematica-nav-btn').each(function(index,value) {
+       if (index < 24) {
+       arraythematic.push( (((( $(value).parent()).attr('href') ).replace('#','')).toLowerCase()).trim() )
+       }  
+    })
+    
+    if (dimensionUrl != null && thematicUrl === null) {
+
+    booleanParams = true
+
+    for (var i = 0 ; i < dimensionUrl.length ; i++) {
+       dimensionUrl = dimensionUrl.replace('\'','')
+       dimensionUrl = dimensionUrl.replace('\"','')
+    }
+
+    dimensionUrl = dimensionUrl.trim()
+    searchElementsArrayUrl(arrayDimension,dimensionUrl, 'dimension' , arrayDimensionObjects)    
+  
+    }
+    else if (dimensionUrl === null && thematicUrl != null ||
+             dimensionUrl !=  null && thematicUrl != null ) {
+
+    booleanParams = true     
+    
+     for (var i = 0 ; i < thematicUrl.length ; i++) {
+       thematicUrl = thematicUrl.replace('\'','')
+       thematicUrl = thematicUrl.replace('\"','')
+    }
+
+    thematicUrl = thematicUrl.trim()
+    searchElementsArrayUrl(arraythematic,thematicUrl, 'thematic', arrayDimensionObjects)  
+
+    }
+    
+}
+
+
+// Buscar el parametro en la definiciones y si pertenece llevarlo directamente a esa definicion
+function searchElementsArrayUrl( array, search , type , arrayAux) {
+
+    iteradorAux = 0
+    pageAux = 1
+
+    for (var i = 0 ; i < array.length ; i++) {
+        
+        if (array[i] === search ) {
+
+            if (type === 'dimension') {
+                FuncionalityUrl(arrayAux,iteradorAux)
+                goToPage(iteradorAux + 1 , 300)
+                
+            }
+            else {
+                FuncionalityUrl(arrayAux,pageAux-1,type,array,i,iteradorAux)
+                goToPage(pageAux , 300)
+                goToSectionMovil(iteradorAux + 1 , 300 , pageAux)
+            }
+
+            break;
+        }
+
+        iteradorAux++
+
+        if (i === 9 || i === 10 || i === 13 || i === 17 ) {
+            iteradorAux = 0
+            pageAux++
+        }
+
+    }
+
+   
+   
+}
+
+
+/* funcion encargada de asiganar los eventos adecuados a cada parametro
+  array1 = arrayDimension
+  index1 = indexDimension
+  type   =  busqueda por dimension o directamente a la tematica
+  array2 = arrarThematic
+  index2 = indexTematic
+  indexAux =  index auxiliar exclusivo de las busquedas por tematicas  */
+function FuncionalityUrl(array1,index1,type,array2,index2,indexAux) {
+   
+    sizeScreenWidth = $(window).width()
+    pressHamburgerMovil = true
+    dimensionMovil = $(array1[index1]).attr('href')
+    dimensionActual = $(array1[index1]).find('.dimension-btn')
+    dimensionActual.addClass('active')
+    title = $(array1[index1]).find('.dimension-btn').attr('title')
+    $('#title-dimension').text(title.toUpperCase())
+    
+
+    if (sizeScreenWidth <= 1050) {
+
+        $('#individual').show()
+        $('#familiar').show()
+        $('#academica').show()
+        $('#economica').show()
+        $('#vidauniversitaria').show()
+        dimensionFuncionalityMovil(dimensionMovil)
+        quitRiskMovil()
+
+    }
+    else {
+        title = 'Dimensión  ' + $(array1[index1]).find('.dimension-btn').attr('title')
+        $('#title-dimension').text(title.toUpperCase())
+        quitRisk()
+        
+        $(".tematicas-dimension").each(function(e) {
+            if ($(this).attr("id") != "tematicas-nav-" + dimensionMovil.replace('#', '')) {
+                $(this).hide()
+            } else {
+                $(this).css('display', 'flex');
+            }
+        })
+
+        $('.dimension').each(function(index,value) {
+
+            if ( $(value).attr('href') === dimensionMovil ) {
+                 $(value).find('.dimension-btn').addClass('active')
+            }
+
+        })
+    } 
+
+    
+    if (type != 'thematic') {
+
+         $('.semaforo-link').off('click')
+
+    }else {
+
+        var dimensionPrecionada
+        var indexDimension
+
+        $('.dimension-btn').each( function(index,value) {
+
+          if (index < 5) {
+            if ( $(value).hasClass('active')) {
+              dimensionPrecionada = (($(value).parent()).attr('href')).trim()
+              indexDimension = $('.dimension').index($(value).parent()) 
+            }
+        
+          }
+
+        })
+       
+        $('.tematica-nav-btn').each(function(index,value) {
+
+            if (  (((( $(value).parent()).attr('href') ).replace('#','')).toLowerCase()).trim() === array2[index2] ) {
+                 $(value).addClass('active')
+
+                 if (sizeScreenWidth <= 1050) {
+                  tematicasFuncionalityMovil(dimensionPrecionada , value , indexAux,indexDimension)
+                 }
+                 else {
+                  semaforo(indexAux , indexDimension , $(value).parent())
+                 }
+            }
+        })
+
+    }
+    
+}
+

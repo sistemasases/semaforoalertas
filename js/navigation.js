@@ -63,17 +63,18 @@ function quitRisk() {
       $('div').remove('.text-danger')
       $('div').remove('.text-warning')
       $('div').remove('.text-success')
-      if (sizeScreen > 1050) { $('.logo-ases img').css('height','80%') }
+      if (sizeScreenWidth > 1050) { $('.logo-ases img').css('height','80%') }
      
 }
+
 
 
 $(function () {
     durationAnimation = 300;
     waitForAnimation = false;
-    sizeScreen  = $(window).width()
+    sizeScreenWidth  = $(window).width()
     pressHamburgerMovil = false
-
+    booleanParams = false
 
     var indexTematica
     var indexDimension
@@ -84,6 +85,9 @@ $(function () {
     //reponsive web desing
     screenResponsiveWebDesing()
 
+    //redirect url
+    redirectUrlToDimensionOrThematic()
+
     // Nav dimensiones
     $('.dimension').click(function(event) {
         event.preventDefault()
@@ -91,9 +95,9 @@ $(function () {
         dimensionPrecionada = $(this).attr('href')
         dimensionActual = this
         pressHamburgerMovil = true
+        booleanParams = false
 
-
-        if (sizeScreen > 1050) {
+        if (sizeScreenWidth > 1050) {
           indexDimension = $('.dimension').index(this) -5
         }else {
           dimensionFuncionalityMovil( dimensionPrecionada , this)
@@ -116,7 +120,7 @@ $(function () {
              $('.semaforo-link').off('click')
             
 
-             if (sizeScreen <= 1050) {
+             if (sizeScreenWidth <= 1050) {
                $('.title-movil').text(title.toUpperCase())
                goToSectionMovil(-1, durationAnimation , indexDimension + 1)
                quitRiskMovil()
@@ -143,16 +147,18 @@ $(function () {
 
     // Nav tematica
     $('.tematica-nav').click(function(event) {
+
         event.preventDefault()
-
-
-        if (sizeScreen <= 1050) {
+        booleanParams = false
+        
+        if (sizeScreenWidth <= 1050) {
           tematicaDimension = ( ( $(this).parent() ).parent() ).parent()
         }
         else {
           tematicaDimension = $(this).parent()
         }
 
+       
         tematicaPresionada = this;
         navsInDimension = tematicaDimension.find('.tematica-nav')
         indexTematica = navsInDimension.index(this)
@@ -166,7 +172,7 @@ $(function () {
             } else {
                 $(this).find('.tematica-nav-btn').addClass("active")
                 
-                if (sizeScreen > 1050) {
+                if (sizeScreenWidth > 1050) {
 
                  if ( $('.pop-up-window').css('display') === 'none') {
                       $('.pop-up-window').fadeIn(1000)
@@ -181,7 +187,20 @@ $(function () {
                 $(this).removeClass('green')
         })
 
-        if (sizeScreen <= 1050) {
+        if (booleanParams) {
+
+        $('.dimension-btn').each( function(index,value) {
+          if (index < 5) {
+            if ( $(value).hasClass('active')) {
+              dimensionPrecionada = ($(value).parent()).attr('href')
+              indexDimension = $('.dimension').index($(value).parent()) 
+            }
+          }
+        })
+      
+        }   
+        
+        if (sizeScreenWidth <= 1050) {
             tematicasFuncionalityMovil(dimensionPrecionada , this , indexTematica,indexDimension)
             goToSectionMovil(indexTematica + 1, durationAnimation , indexDimension + 1)
             
@@ -275,11 +294,12 @@ $(function () {
     //Hamburger nagevacion cuando se da click en el menu
      $('.hamburger-btn').click(function(event) {
        event.preventDefault()
-       
+       booleanParams = false
+
        $('.tematica-nav').find('.tematica-nav-btn').removeClass("active")
        $('.semaforo-link').off('click')
        
-       if (sizeScreen <= 1050) {
+       if (sizeScreenWidth <= 1050) {
        
        if ( $('#inicio').hasClass('active') ) {
        $('#tematicas-movil').addClass('title-tematicas')
@@ -313,6 +333,15 @@ $(function () {
        $('#tematicas-movil').fadeOut()
        $('.hamburger-movil-tematica').fadeOut()
 
+       if (booleanParams) {
+
+       $('.dimension-btn').each(function(index,value) {
+         if ($(value).hasClass('active')) {
+            dimensionActual = $(value).parent()
+         }
+       })
+
+       }
        if ( pressHamburgerMovil === false) {
             pressHamburgerMovil = true
 
@@ -330,8 +359,19 @@ $(function () {
      $('.hamburger-movil-tematica').click( function(event) {
 
          event.preventDefault()
-         
-         switch (dimensionPrecionada) {
+
+         titleDimension = ''
+    
+         if (booleanParams) {
+
+         $('.dimension-btn').each(function(index,value) {
+             if ($(value).hasClass('active')) {
+               titleDimension = $(value).parent().attr('href')
+             }
+         })
+
+         }
+         switch (dimensionPrecionada || titleDimension) {
 
             case '#individual':
                 $('.tematicas-dimension-movil').slideToggle(700)
