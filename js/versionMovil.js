@@ -805,24 +805,22 @@ function redirectUrlToDimensionOrThematic() {
 
 
 // Buscar el parametro en la definiciones y si pertenece llevarlo directamente a esa definicion
-function searchElementsArrayUrl( array, search , type , arrayAuxD) {
+function searchElementsArrayUrl( array, search , type , arrayAux) {
 
-    band = false
     iteradorAux = 0
     pageAux = 1
 
     for (var i = 0 ; i < array.length ; i++) {
         
         if (array[i] === search ) {
-            band = true
 
             if (type === 'dimension') {
-                FuncionalityUrl(arrayAuxD,iteradorAux)
+                FuncionalityUrl(arrayAux,iteradorAux)
                 goToPage(iteradorAux + 1 , 300)
                 
             }
             else {
-                FuncionalityUrl(arrayAuxD,pageAux-1,type,array,i,iteradorAux)
+                FuncionalityUrl(arrayAux,pageAux-1,type,array,i,iteradorAux)
                 goToPage(pageAux , 300)
                 goToSectionMovil(iteradorAux + 1 , 300 , pageAux)
             }
@@ -830,12 +828,13 @@ function searchElementsArrayUrl( array, search , type , arrayAuxD) {
             break;
         }
 
-        if (i === 9 || i === 10 || i === 13 || i === 18 ) {
+        iteradorAux++
+
+        if (i === 9 || i === 10 || i === 13 || i === 17 ) {
             iteradorAux = 0
             pageAux++
         }
 
-        iteradorAux++
     }
 
    
@@ -843,59 +842,23 @@ function searchElementsArrayUrl( array, search , type , arrayAuxD) {
 }
 
 
-//funcion encargada de asiganar los eventos adecuados a cada parametro
-// arrayD = arrayDimension
-// indexD = indexDimension
-// type   =  busqueda por dimension o directamente a la tematica
-// arrayT = arrarThematic
-// indexT = indexTematic
-// indexAux =  index auxiliar exclusivo de las busquedas por tematicas  
-function FuncionalityUrl(arrayD,indexD,type,arrayT,indexT,indexAux) {
+/* funcion encargada de asiganar los eventos adecuados a cada parametro
+  array1 = arrayDimension
+  index1 = indexDimension
+  type   =  busqueda por dimension o directamente a la tematica
+  array2 = arrarThematic
+  index2 = indexTematic
+  indexAux =  index auxiliar exclusivo de las busquedas por tematicas  */
+function FuncionalityUrl(array1,index1,type,array2,index2,indexAux) {
    
     sizeScreenWidth = $(window).width()
     pressHamburgerMovil = true
-    dimensionMovil = $(arrayD[indexD]).attr('href')
-    dimensionActual = $(arrayD[indexD]).find('.dimension-btn')
+    dimensionMovil = $(array1[index1]).attr('href')
+    dimensionActual = $(array1[index1]).find('.dimension-btn')
     dimensionActual.addClass('active')
-    title = $(arrayD[indexD]).find('.dimension-btn').attr('title')
+    title = $(array1[index1]).find('.dimension-btn').attr('title')
     $('#title-dimension').text(title.toUpperCase())
     
-
-    if (type != 'thematic') {
-
-         $('.semaforo-link').off('click')
-
-    }else {
-
-        var dimensionPrecionada
-        var indexDimension
-
-        $('.dimension-btn').each( function(index,value) {
-          if (index < 5) {
-            if ( $(value).hasClass('active')) {
-              dimensionPrecionada = (($(value).parent()).attr('href')).trim()
-              indexDimension = $('.dimension').index($(value).parent()) 
-            }
-        
-          }
-        })
-       
-        $('.tematica-nav-btn').each(function(index,value) {
-            if (  (((( $(value).parent()).attr('href') ).replace('#','')).toLowerCase()).trim() === arrayT[indexT]) {
-                 $(value).addClass('active')
-
-                 if (sizeScreenWidth <= 1050) {
-                  tematicasFuncionalityMovil(dimensionPrecionada , value , indexAux-1,indexDimension)
-                 }
-                 else {
-                  semaforo(indexAux , indexDimension , $(value).parent())
-                 }
-                 
-            }
-        })
-
-
-    }
 
     if (sizeScreenWidth <= 1050) {
 
@@ -909,7 +872,7 @@ function FuncionalityUrl(arrayD,indexD,type,arrayT,indexT,indexAux) {
 
     }
     else {
-        title = 'Dimensión  ' + $(arrayD[indexD]).find('.dimension-btn').attr('title')
+        title = 'Dimensión  ' + $(array1[index1]).find('.dimension-btn').attr('title')
         $('#title-dimension').text(title.toUpperCase())
         quitRisk()
         
@@ -929,6 +892,44 @@ function FuncionalityUrl(arrayD,indexD,type,arrayT,indexT,indexAux) {
 
         })
     } 
+
+    
+    if (type != 'thematic') {
+
+         $('.semaforo-link').off('click')
+
+    }else {
+
+        var dimensionPrecionada
+        var indexDimension
+
+        $('.dimension-btn').each( function(index,value) {
+
+          if (index < 5) {
+            if ( $(value).hasClass('active')) {
+              dimensionPrecionada = (($(value).parent()).attr('href')).trim()
+              indexDimension = $('.dimension').index($(value).parent()) 
+            }
+        
+          }
+
+        })
+       
+        $('.tematica-nav-btn').each(function(index,value) {
+
+            if (  (((( $(value).parent()).attr('href') ).replace('#','')).toLowerCase()).trim() === array2[index2] ) {
+                 $(value).addClass('active')
+
+                 if (sizeScreenWidth <= 1050) {
+                  tematicasFuncionalityMovil(dimensionPrecionada , value , indexAux,indexDimension)
+                 }
+                 else {
+                  semaforo(indexAux , indexDimension , $(value).parent())
+                 }
+            }
+        })
+
+    }
     
 }
 
