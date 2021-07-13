@@ -361,16 +361,14 @@ button:focus {
 .semaforo {
     position: fixed;
     bottom: 0;
-    left: -30%;
+    left: 5%;
     padding: 0;
     margin: 0;
     height: 70%;
-    width: 100%;
 }
 
 .semaforo svg {
     height: 100%;
-    width: 100%;
 }
 
 .hamburger {
@@ -876,14 +874,14 @@ button:focus {
 
 .descriptores {
     position: relative;
-    margin-top: 40px;
+    max-height: 60%;
+    margin-top: 2.5%;
     display: none;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     background: white;
     width: 55%;
-    padding: 50px 25px;
-    padding-top: 54px;
+    padding: 3.5% 2%;
     flex-grow: 2;
     border-style: solid;
     border-radius: 20px;
@@ -902,6 +900,7 @@ button:focus {
     align-items: flex-start;
     color: dimgray;
     padding-left: 15px;
+    padding-top: 7%;
     font-size: 20px;
     text-align: justify;
 }
@@ -967,7 +966,7 @@ button:focus {
 .pop-up-window {
    display: none;
    position: fixed;
-   top: 120px;
+   top: 18%;
    left: 3%;
    width: 270px;
    height: 70px;
@@ -992,8 +991,8 @@ button:focus {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     position: absolute;
-    top: 65px;
-    left: 45%;
+    top: 93%;
+    left: 38%;
 }
 
 
@@ -1025,36 +1024,79 @@ button:focus {
 /*               RESPONSIVE WEB DESING             */
 
 
+
 /*     VERSION ESCRITORIO PANTALLAS GRANDES        */
 
-@media screen and (max-width:1600px) {
+@media screen and (min-height:1000px) and (max-width:1600px) and (orientation: landscape) {
     /* HOME */
     .semaforo  {
-       left: -37%;
+       left: 5%;
+    }
+    .tematica {
+        position: relative;
+        left: 6%;
+        max-width: 50%;
+    }
+    .descriptores {
+        left: 6%;
+        max-width: 50%;
     }
     .inicio-title {
        position: relative;
-       left: 10%;
+       left: 13%;
     }
+    .pop-up-window {
+        top: 22%;
+        left: 7%;
+    }
+    .pop-up-window::after {
+        left: 42%;
+    }
+
+
 }
+
 
 /*     VERSION ESCRITORIO PANTALLAS MEDIANAS       */
 
-@media screen and (max-width:1290px) {
+@media screen and (max-width:1290px) and (orientation: landscape) {
     /* HOME */
     .title {
       left:47%;
     }
     .semaforo  {
        bottom: 0;
-       left: -26%;
-       width: 80%;
+       left: 1%;
+    }
+    .tematica {
+        position: relative;
+        left: 2.5%;
+        max-width: 50%;
+    }
+    .descriptores {
+        left: 2.5%;
+        max-width: 50%;
+    }
+    .inicio-title {
+       position: relative;
+       left: 13%;
     }
     .inicio-title {
        position: relative;
        left: 16%;
        font-size: 3.8em;
     }
+    .tematica-title {
+        font-size: 2.3em !important;
+    }
+    .pop-up-window {
+        top: 22%;
+        left: 2%;
+    }
+    .pop-up-window::after {
+        left: 42%;
+    }
+
 }
 
 
@@ -1063,28 +1105,37 @@ button:focus {
     .title {
         display: none;
     }
+    .descriptores {
+        max-height: 100%;
+    }
     .title-dimension {
         display: flex;
+        right: -5%;
+        top: 10%;
+        font-size: 2.7em;
     }
     .inicio-title {
         display: none;
     }
-    .inicio-title-movil {
-        display: block;
-        position: relative;
-        left: 30%;
-    }
     .hamburger-movil {
         display: flex;
-        top: 0;
-        right: 4%;
+        top: 15%;
+        font-size: xx-large;
+        right: 1%;
     }
     .dimensiones {
         display: none;
     }
+    .inicio-title-movil {
+        display: block;
+        position: fixed;
+        left: 25%;
+        top: 15%;
+        font-size: 6rem;
+    }
     .semaforo  {
-        left: -20%;
-        width: 80%;
+        height: 45%;
+        left: 15%;
     }
 
   
@@ -1101,8 +1152,8 @@ button:focus {
     .inicio-title-movil {
         display: block;
         position: fixed;
-        left: 40%;
-        font-size: 4.5em;
+        left: 27%;
+        font-size: 5em;
     }
     .hamburger-movil {
         display: flex;
@@ -1114,7 +1165,7 @@ button:focus {
         display: none;
     }
     .semaforo  {
-        left: -10%;
+        left: 15%;
     }
     .semaforo svg {
         width: 80%;
@@ -1129,20 +1180,18 @@ button:focus {
         display: none;
     }
     .inicio-title-movil {
-        left: 50%;
-        font-size: 4em;
+        left: 25%;
+        font-size: 5em;
     }
     .title-dimension {
-        right: 5%;
+        right: -5%;
     }
     .logo-ases {
         height: 6rem;
         margin: 35px;
     }
     .semaforo  {
-        left: 1.5%;
-        height: 68%;
-        width: 70%;
+        left: 15%;
     }
     .semaforo svg {
         width: 68%;
@@ -1153,7 +1202,8 @@ button:focus {
 
 @media screen and (max-width:700px) and (orientation: portrait) {
     .title-dimension {
-        right: 5%;
+        top: -4%;
+        right: -5%;
     }
     .dimension-btn {
         height: 3rem;
@@ -1229,7 +1279,9 @@ button:focus {
 /* VERSIONES MOVILES GRANDES */
 @media screen and (max-width:500px) and (orientation: portrait)  {
     .title-dimension {
+        top: 0;
         right: -3%;
+        font-size: 28px;
     }
     .title {
         top: 0;

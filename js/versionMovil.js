@@ -429,7 +429,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 }
 
 //funcionalidad de las tematicas en version movil
-function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexTematica,indexDimension) {
+function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexTematica) {
         
         sizeScreenWidth  = $(window).width()
         tituloTematica = $(tematicaPresionada).attr('title')
@@ -539,8 +539,8 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
             break;
 
             case '#vidauniversitaria':
-                 $('.tematicas-dimension-vidaU').slideUp(300)
-
+                $('.tematicas-dimension-vidaU').slideUp(300)
+                console.log('hola')
                 if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
 
                         if ( indexTematica === 0 ||
@@ -772,7 +772,7 @@ function redirectUrlToDimensionOrThematic() {
        arraythematic.push( (((( $(value).parent()).attr('href') ).replace('#','')).toLowerCase()).trim() )
        }  
     })
-    
+   
     if (dimensionUrl != null && thematicUrl === null) {
 
     booleanParams = true
@@ -893,7 +893,6 @@ function FuncionalityUrl(array1,index1,type,array2,index2,indexAux) {
         })
     } 
 
-    
     if (type != 'thematic') {
 
          $('.semaforo-link').off('click')

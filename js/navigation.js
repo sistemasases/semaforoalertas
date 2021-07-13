@@ -47,6 +47,7 @@ function quitRisk() {
       $('.section').css({'height': '100vh' , 'padding-top': '220px'})
       $('div .tematica-logo img').attr({'height': 150})
       $('.tematica').css('height', 'auto');
+      $('.tematica').css('max-height','100%')
       $('.tematica').css('padding', '1.4% 1.4%');
       $('.semaforo').find('.cls-1').removeClass('filter')
       $('.semaforo').find('.red-circle').removeClass('filter')
@@ -63,7 +64,10 @@ function quitRisk() {
       $('div').remove('.text-danger')
       $('div').remove('.text-warning')
       $('div').remove('.text-success')
-      if (sizeScreenWidth > 1050) { $('.logo-ases img').css('height','80%') }
+      if (sizeScreenWidth > 1050) {
+      $('.logo-ases img').css('height','80%' ) 
+      $('.logo-ases').css('margin','10px' ) 
+      }
      
 }
 
@@ -201,7 +205,7 @@ $(function () {
         }   
         
         if (sizeScreenWidth <= 1050) {
-            tematicasFuncionalityMovil(dimensionPrecionada , this , indexTematica,indexDimension)
+            tematicasFuncionalityMovil(dimensionPrecionada , this , indexTematica)
             goToSectionMovil(indexTematica + 1, durationAnimation , indexDimension + 1)
             
         }else {
@@ -210,7 +214,7 @@ $(function () {
             semaforo(indexTematica , indexDimension , this)
         }
 
-       
+      
        
     });
     
