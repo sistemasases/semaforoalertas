@@ -1021,6 +1021,7 @@ button:focus {
     text-decoration: underline #428bca;
     color:#428bca;
 }
+
 /*               RESPONSIVE WEB DESING             */
 
 
@@ -1055,7 +1056,6 @@ button:focus {
 
 
 }
-
 
 /*     VERSION ESCRITORIO PANTALLAS MEDIANAS       */
 
@@ -1101,6 +1101,7 @@ button:focus {
 
 
 /*  VERSION PARA TABLES Y ESCRITORES PEQUEÑOS      */
+
 @media  screen and (max-width:1050px ) and (orientation: portrait) {
     .title {
         display: none;
@@ -1142,6 +1143,7 @@ button:focus {
 }
 
 /* VERSION PARA TABLES MEDIANAS */
+
 @media  screen and (max-width:900px ) and (orientation: portrait)  {
     .title-dimension {
         display: flex;
@@ -1174,7 +1176,9 @@ button:focus {
     
 }
 
+
 /* VERSION PARA TABLES PEQUEÑAS Y MEDIANAS */
+
 @media screen and (max-width:800px) and (orientation: portrait)  {
     .title {
         display: none;
@@ -1199,6 +1203,7 @@ button:focus {
 
 }
 
+/* VERSION PARA TABLES PEQUEÑAS */
 
 @media screen and (max-width:700px) and (orientation: portrait) {
     .title-dimension {
@@ -1276,7 +1281,9 @@ button:focus {
     }
 }
 
+
 /* VERSIONES MOVILES GRANDES */
+
 @media screen and (max-width:500px) and (orientation: portrait)  {
     .title-dimension {
         top: 0;
@@ -1424,7 +1431,9 @@ button:focus {
 
 }
 
+
 /* VESION MIVLES PEQUEÑOS Y MEDIANOS */
+
 @media (max-width:375px) and (orientation: portrait) {
     .title-dimension {
         right: -5%;

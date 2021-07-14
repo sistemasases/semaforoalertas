@@ -78,8 +78,8 @@ function semaforo(indexTematica , indexDimension , tematicaPresionada) {
          }
        
          $('.tematica').css('justify-content','left')
-         $('.tematica').css('max-height','15%')
          $('.tematica').css('padding', '50px 50px');
+         $('.tematica').css('max-height','15%')
          $('div .tematica-content').hide()
          $('div .tematica-logo img').attr({'height': 90})
          $('div .section').attr({'id':'section'})
