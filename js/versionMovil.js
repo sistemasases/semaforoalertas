@@ -304,7 +304,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                  if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
 
                  $('.tematicas-dimension-movil').css({
-                     'right': '3.6%'
+                     'right': '3.2%'
                  })
 
                  }
@@ -329,14 +329,14 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                 if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
 
                 $('.tematicas-dimension-movil').css({
-                     'right': '3.6%'
+                     'right': '3.85%'
                 })
 
                 }
                 else {
 
                 $('.tematicas-dimension-movil').css({
-                     'right': '1.5%'
+                     'right': '2.4%'
                 })
 
                 }
@@ -354,7 +354,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 
                 $('.tematicas-dimension-movil').css({
                      'top': '26%',
-                     'right': '5%'
+                     'right': '4.8%'
                 })
 
                 }
@@ -362,7 +362,7 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
 
                 $('.tematicas-dimension-movil').css({
                       'top': '26%',
-                     'right': '3.5%'
+                      'right': '2.95%'
                 })
 
                 }
@@ -539,8 +539,8 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
             break;
 
             case '#vidauniversitaria':
-                $('.tematicas-dimension-vidaU').slideUp(300)
-                console.log('hola')
+                 $('.tematicas-dimension-vidaU').slideUp(300)
+
                 if (sizeScreenWidth <= 500 && sizeScreenWidth > 375) {
 
                         if ( indexTematica === 0 ||
@@ -734,16 +734,21 @@ function quitRiskMovil() {
     $('.green-circle').css('fill','#94b33c')
     $('.yellow-circle').css('fill','#f3eb3b')
     $('.red-circle').css('fill','#ef3a2d')
-    $('.corner-menu').css({'padding-left': '30px'})
     $('.tematica-nav').removeClass('red')
     $('.tematica-nav').removeClass('yellow')
     $('.tematica-nav').removeClass('green')
-    $('.semaforo').css({
-       'left': '-25%'
-    })
     $('.section').css({
         'padding-bottom': '50%'
     })
+
+    if ( $('#inicio').hasClass('active')  ) {
+
+    $('.corner-menu').css({'padding-left': '30px'})
+    $('.semaforo').css({
+       'left': '-25%'
+    })
+
+    }
 
 }
 
@@ -772,7 +777,7 @@ function redirectUrlToDimensionOrThematic() {
        arraythematic.push( (((( $(value).parent()).attr('href') ).replace('#','')).toLowerCase()).trim() )
        }  
     })
-   
+    
     if (dimensionUrl != null && thematicUrl === null) {
 
     booleanParams = true
@@ -800,6 +805,10 @@ function redirectUrlToDimensionOrThematic() {
     searchElementsArrayUrl(arraythematic,thematicUrl, 'thematic', arrayDimensionObjects)  
 
     }
+
+    arrayDimension.splice(0,5)
+    arrayDimensionObjects.splice(0,5)
+    arraythematic.splice(0,24)
     
 }
 
@@ -893,6 +902,7 @@ function FuncionalityUrl(array1,index1,type,array2,index2,indexAux) {
         })
     } 
 
+    
     if (type != 'thematic') {
 
          $('.semaforo-link').off('click')
@@ -920,7 +930,7 @@ function FuncionalityUrl(array1,index1,type,array2,index2,indexAux) {
                  $(value).addClass('active')
 
                  if (sizeScreenWidth <= 1050) {
-                  tematicasFuncionalityMovil(dimensionPrecionada , value , indexAux,indexDimension)
+                  tematicasFuncionalityMovil(dimensionPrecionada , value , indexAux)
                  }
                  else {
                   semaforo(indexAux , indexDimension , $(value).parent())

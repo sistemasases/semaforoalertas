@@ -47,8 +47,8 @@ function quitRisk() {
       $('.section').css({'height': '100vh' , 'padding-top': '220px'})
       $('div .tematica-logo img').attr({'height': 150})
       $('.tematica').css('height', 'auto');
-      $('.tematica').css('max-height','100%')
       $('.tematica').css('padding', '1.4% 1.4%');
+      $('.tematica').css('max-height','100%')
       $('.semaforo').find('.cls-1').removeClass('filter')
       $('.semaforo').find('.red-circle').removeClass('filter')
       $('.semaforo').find('.yellow-circle').removeClass('filter')
@@ -65,7 +65,7 @@ function quitRisk() {
       $('div').remove('.text-warning')
       $('div').remove('.text-success')
       if (sizeScreenWidth > 1050) {
-      $('.logo-ases img').css('height','80%' ) 
+      $('.logo-ases img').css('height','80%')
       $('.logo-ases').css('margin','10px' ) 
       }
      
@@ -153,7 +153,7 @@ $(function () {
     $('.tematica-nav').click(function(event) {
 
         event.preventDefault()
-        booleanParams = false
+        //booleanParams = false
         
         if (sizeScreenWidth <= 1050) {
           tematicaDimension = ( ( $(this).parent() ).parent() ).parent()
@@ -214,7 +214,7 @@ $(function () {
             semaforo(indexTematica , indexDimension , this)
         }
 
-      
+       
        
     });
     
@@ -298,12 +298,25 @@ $(function () {
     //Hamburger nagevacion cuando se da click en el menu
      $('.hamburger-btn').click(function(event) {
        event.preventDefault()
-       booleanParams = false
+       
 
        $('.tematica-nav').find('.tematica-nav-btn').removeClass("active")
        $('.semaforo-link').off('click')
        
        if (sizeScreenWidth <= 1050) {
+
+       if (booleanParams) {
+
+        $('.dimension-btn').each( function(index,value) {
+          if (index < 5) {
+            if ( $(value).hasClass('active')) {
+              indexDimension = $('.dimension').index($(value).parent()) 
+            }
+          }
+        })
+      
+       }  
+       
        
        if ( $('#inicio').hasClass('active') ) {
        $('#tematicas-movil').addClass('title-tematicas')

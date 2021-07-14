@@ -62,6 +62,7 @@ function inicio() {
     $('div').remove('.text-warning')
     $('div').remove('.text-success')
     $('.logo-ases').css('margin','40px' ) 
+    
     }
 }
 
