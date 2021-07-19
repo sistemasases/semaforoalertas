@@ -205,6 +205,7 @@ $(function () {
         }   
         
         if (sizeScreenWidth <= 1050) {
+            //slideThematic(true,false)
             tematicasFuncionalityMovil(dimensionPrecionada , this , indexTematica)
             goToSectionMovil(indexTematica + 1, durationAnimation , indexDimension + 1)
             
@@ -298,8 +299,8 @@ $(function () {
     //Hamburger nagevacion cuando se da click en el menu
      $('.hamburger-btn').click(function(event) {
        event.preventDefault()
+      
        
-
        $('.tematica-nav').find('.tematica-nav-btn').removeClass("active")
        $('.semaforo-link').off('click')
        
@@ -324,6 +325,9 @@ $(function () {
        $('#tematicas-movil').attr({style : 'display: flex;'})
        $('#tematicas-movil').text('Tematicas')
        }
+
+       $('.page').off('scroll')
+       slideThematic(false,true)
        restarAnimateFooterMovil()
        goToSectionMovil(-1, durationAnimation , indexDimension + 1)
        quitRiskMovil()
