@@ -284,7 +284,7 @@ h1 {
     font-style: italic; 
     font-weight: bold;
     color: dimgray;
-    padding-top: 85px;
+    padding-top: 98px;
      
 }
 
@@ -979,6 +979,7 @@ button:focus {
    font-family: Roboto, sans-serif;
    text-decoration: none;
    border-radius: 5px;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
    padding: 10px 10px;
 
 }
@@ -987,12 +988,12 @@ button:focus {
 .pop-up-window::after {
     content: "";
     display: block;
-    border-top: 15px solid #f5f5f5;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
     position: absolute;
     top: 93%;
     left: 38%;
+    border-top: 15px solid #f5f5f5;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
 }
 
 
@@ -1010,6 +1011,69 @@ button:focus {
     text-align: center;
     font-family: Roboto, sans-serif;
 }
+
+.tooltip-movil {
+    display: none;
+    position: fixed;
+    bottom: 17%;
+    left: 15%;
+    width: 270px;
+    height: 72px;
+    background-color: white;
+    line-height: 15px;
+    text-align: justify;
+    color: gray;
+    font-size: 1em;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 4% 2%;
+}
+
+.tooltip-movil::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -8%;
+    left: -4%;
+    transform: rotate(125deg);
+    border-top: 22px solid white;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+}
+
+.tooltip-movil-inicio {
+    display: none;
+    position: fixed;
+    top: 8%;
+    right: 8%;
+    width: 120px;
+    height: 60px;
+    background-color:  #f5f5f5;
+    line-height: 15px;
+    text-align: justify;
+    color: gray;
+    font-size: 0.7em;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 2% 2%;
+}
+
+.tooltip-movil-inicio::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -15%;
+    right: -2.1%;
+    transform: rotate(90deg);
+    border-top: 22px solid #f5f5f5;
+    border-left: 13px solid transparent;
+    border-right: 15px solid transparent;
+}
+
 
 /* Style Mail for hreft*/
 .mailHreft {
@@ -1442,7 +1506,7 @@ button:focus {
     }
     .title-movil {
         top: 0;
-        padding-top: 59px;
+        padding-top: 63px;
         font-style: italic; 
     }
     .title-tematicas {
@@ -1615,6 +1679,15 @@ button:focus {
     }
    .tematica-nav-btn img {
         filter: invert(100%) sepia(6%) saturate(100%) hue-rotate(150deg) brightness(100%) contrast(100%) grayscale(1);
+   }
+   .tooltip-movil {
+       width: 150px;
+       line-height: 10px;
+       font-size: 0.7em;
+       padding: 4% 5%;
+   }
+   .tooltip-movil-inicio {
+       padding: 2% 2%;
    }
 
 
