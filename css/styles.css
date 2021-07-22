@@ -785,6 +785,7 @@ button:focus {
     font-size: xx-large;
 }
 
+
 .tematica-nav-btn:hover {
     background: rgb(213, 228, 240);
 }
@@ -1046,7 +1047,7 @@ button:focus {
 .tooltip-movil-inicio {
     display: none;
     position: fixed;
-    top: 8%;
+    bottom: 25%;
     right: 8%;
     width: 120px;
     height: 60px;
@@ -1073,6 +1074,30 @@ button:focus {
     border-left: 13px solid transparent;
     border-right: 15px solid transparent;
 }
+
+.title-thematic-movil-boton {
+    position: absolute;
+    right: 25%;
+    padding-top: 1.2%;
+    color: white;
+    font-size: 0.5em;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+}
+
+.section-nav-btn {
+    height: 70px;
+    width: 98%;
+    margin: 8px 5px;
+    border: hidden;
+    border-radius: 10px;
+    background: #D3CFCE;
+    cursor: pointer;
+    color: white;
+    font-size: 0.7em;
+    line-height: 120%;
+}
+
 
 
 /* Style Mail for hreft*/

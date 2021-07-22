@@ -418,6 +418,23 @@ $(function () {
          
      })
 
+     $('#title-accion-1 , #title-accion-2 , #title-accion-3,'+
+        '#title-accion-4 , #title-accion-5, #title-accion-6').click( function(event) {
+
+         event.preventDefault()
+
+         eventoCapturado = $(event.currentTarget).attr('id')
+         numId = eventoCapturado.replace('title-accion-','')
+         
+         for (let i = 1 ; i <= 6 ; i++ ) {
+         if (i != numId)
+         $('#content-'+i+'').slideUp()
+         }
+
+         $('#content-'+numId+'').slideToggle()
+
+     })
+
      
      
      //rueda del mouse
