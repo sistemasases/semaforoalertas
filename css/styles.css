@@ -275,7 +275,7 @@ h1 {
 
 .title-movil {
     float: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 2%;
     transform: translate(-50%, -50%);
@@ -284,7 +284,7 @@ h1 {
     font-style: italic; 
     font-weight: bold;
     color: dimgray;
-    padding-top: 98px;
+    padding-top: 85px;
      
 }
 
@@ -324,7 +324,7 @@ h1 {
     display: flex;
     position: fixed;
     top: 0;
-    right: 15%;
+    right: 4.2em;
     padding-top: 82px;
     font-family: Roboto, sans-serif;
     font-weight: bold;
@@ -410,7 +410,7 @@ button:focus {
     box-sizing: initial;
     line-height: 1;
     padding-top: 2%;
-    float: right;   
+    padding-left: 2%;
 }
 
 
@@ -735,6 +735,7 @@ button:focus {
     float: right;
     display: none;
     list-style: none;
+    z-index: 100;
 }
 
 .tematicas-dimension-familiar {
@@ -744,6 +745,7 @@ button:focus {
     float: right;
     display: none;
     list-style: none;  
+    z-index: 100;
 }
 
 .tematicas-dimension-academica {
@@ -753,6 +755,7 @@ button:focus {
     float: right;
     display: none;
     list-style: none;  
+    z-index: 100;
 }
 
 .tematicas-dimension-economica {
@@ -762,6 +765,7 @@ button:focus {
     float: right;
     display: none;
     list-style: none;  
+    z-index: 100;
 }
 
 .tematicas-dimension-vidaU {
@@ -771,6 +775,7 @@ button:focus {
     float: right;
     display: none;
     list-style: none;  
+    z-index: 100;
 }   
 
 
@@ -1091,7 +1096,7 @@ button:focus {
     margin: 8px 5px;
     border: hidden;
     border-radius: 10px;
-    background: #D3CFCE;
+    background: #707070;
     cursor: pointer;
     color: white;
     font-size: 0.7em;
@@ -1385,8 +1390,8 @@ button:focus {
         font-style: italic; 
     }
     .title-tematicas {
-        padding-top: 222px;
-        padding-right: 0%;
+        padding-top: 213px;
+        padding-right: 0.15em;
         font-size: 2rem;     
     }
     .dimensiones {
@@ -1406,7 +1411,7 @@ button:focus {
     .hamburger-movil-tematica {
         top: 0;
         right: 1.3%;
-        padding-top: 73px;
+        padding-top: 65px;
     }
     .hamburger-btn {
         height: 2.5rem;
@@ -1462,6 +1467,8 @@ button:focus {
     .menu-item { 
         font-size: 1.9em;
         line-height: 110%;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .close-btn, .back-btn {
         font-size: xx-large;
@@ -1470,10 +1477,11 @@ button:focus {
         font-size: 1.2em;
     }
     .information-page-content {
-        height: 31%;
+        height: 40%;
         font-size: 0.9em;
     }
     .information-page {
+        top: 15%;
         left: 12%;
         font-size: 1.5em;
     }
@@ -1503,17 +1511,25 @@ button:focus {
     }
     .tematica-content {
         padding-top: 35px;
+        padding-bottom: 35px;
         font-size: 17px;
     }
     .title-tematica-movil {
         font-size: 20px;
-        padding-top: 99.8px;
+        padding-top: 90px;
     }
     .tematica-nav-btn.active {
         background: dimgray;
     }
     .tematica-nav-btn img {
         filter: invert(100%) sepia(6%) saturate(100%) hue-rotate(150deg) brightness(100%) contrast(100%) grayscale(1);
+    }
+    .close-btn, .back-btn {
+        background-color: gainsboro;
+    }
+    .close, .back {
+    float: left;
+    padding: 20px 15px;
     }
    
 
@@ -1531,13 +1547,13 @@ button:focus {
     }
     .title-movil {
         top: 0;
-        padding-top: 63px;
+        padding-top: 59px;
         font-style: italic; 
     }
     .title-tematicas {
         top: 0;
-        right: -3%;
-        padding-top: 175px;
+        right: 0.1em;
+        padding-top: 150px;
         font-size: 1.7rem;     
     }
     .menu-dimension-movil {
@@ -1564,7 +1580,7 @@ button:focus {
     .hamburger-movil-tematica {
         top: 0;
         right: -0.9%;
-        padding-top: 55px; 
+        padding-top: 43px; 
     }
     .hamburger-btn {
         height: 2rem;
@@ -1654,6 +1670,8 @@ button:focus {
     .menu-item { 
         font-size: 1.9em;
         line-height: 110%;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .close-btn, .back-btn {
         font-size: xx-large;
@@ -1662,10 +1680,11 @@ button:focus {
         font-size: 1.2em;
     }
     .information-page-content {
-        height: 31%;
+        height: 40%;
         font-size: 0.9em;
     }
     .information-page {
+        top: 15%;
         left: 12%;
         font-size: 1.5em;
     }
@@ -1693,11 +1712,12 @@ button:focus {
     }
     .tematica-content {
         padding-top: 25px;
+        padding-bottom: 25px;
     }
     .title-tematica-movil {
-        right: 19%;
+        right: 3.5em;
         font-size: 20px;
-        padding-top: 75px;
+        padding-top: 60px;
     }
     .tematica-nav-btn.active {
         background: dimgray;
@@ -1713,6 +1733,9 @@ button:focus {
    }
    .tooltip-movil-inicio {
        padding: 2% 2%;
+   }
+   .close-btn, .back-btn {
+        background-color: gainsboro;
    }
 
 
