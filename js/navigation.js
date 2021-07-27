@@ -418,15 +418,14 @@ $(function () {
          
      })
 
-     $('#title-accion-1 , #title-accion-2 , #title-accion-3,'+
-        '#title-accion-4 , #title-accion-5, #title-accion-6').click( function(event) {
+     $('.section-nav-btn').click( function(event) {
 
          event.preventDefault()
 
-         eventoCapturado = $(event.currentTarget).attr('id')
+         eventoCapturado = $(this).attr('id')
          numId = eventoCapturado.replace('title-accion-','')
          
-         for (let i = 1 ; i <= 6 ; i++ ) {
+         for (let i = 1 ; i <= 13 ; i++ ) {
          if (i != numId)
          $('#content-'+i+'').slideUp()
          }
@@ -435,6 +434,16 @@ $(function () {
 
      })
 
+     if (sizeScreenWidth > 1050) {
+     for (let i = 1; i <= 13 ; i++) {
+          $('#content-'+i+'').css({
+            'background-color': 'whitesmoke',
+            'padding': '15px 30px',
+            'border': 'hidden',
+            'border-radius': '15px'
+        })
+     }
+    }
      
      
      //rueda del mouse
