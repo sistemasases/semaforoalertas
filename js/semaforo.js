@@ -266,6 +266,12 @@ function semaforoMovil(tematicaPresionada) {
         descriptorColor = $('.descriptor').filter(function(){return $(this).attr('id') == id});
         descriptorColor.css('display', 'flex')
 
+        $('.semaforo').find('.circle').each(function(e) {
+             $(this).addClass('filter')
+             if($(this).hasClass(id+'-circle')) {
+                 $(this).removeClass('filter')
+             }
+        })
 
         if (id === 'red') {
              $('#circle-red').attr({'stroke': '#FC0404' , 'stroke-width':2})
