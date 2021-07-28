@@ -1555,7 +1555,7 @@ button:focus {
     }
     .title-tematicas {
         top: 0;
-        right: 0.1em;
+        right: -0.5em;
         padding-top: 150px;
         font-size: 1.7rem;     
     }
