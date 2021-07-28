@@ -6,6 +6,7 @@ function screenResponsiveWebDesing() {
      sizeScreenHeigth = $(window).height()
      linkUnivalle     = $('map').find('#link-univalle')
      linkAses         = $('map').find('#link-ases')
+     textTooltipDimension = $('#tooltip-dimension').text()
      pressFooter = false;
      starPage = false
      startSemaforo = false
@@ -100,8 +101,11 @@ function screenResponsiveWebDesing() {
         $('.contact-information').text('Mayor información')
 
         $('.tooltip-movil-inicio').fadeIn()
+        $('.tooltip-movil-inicio').text(textTooltipDimension)
         $('.tooltip-movil-inicio').delay(3000).fadeOut()
-        
+
+    
+
         $('.menu-item').each(function (index,value) {
            if ($(value).attr('href') === '#about'){
                $(value).text('¿ Qué es el semaforo de alertas ?')
@@ -234,6 +238,10 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
              'height':'2.8rem',
              'width':'15rem'
         })
+
+        $('.tooltip-movil-inicio').fadeIn()
+        $('.tooltip-movil-inicio').text(" Haz clic en las Tematicas para inicar")
+        $('.tooltip-movil-inicio').delay(1500).fadeOut()
 
         for (var i = 0 ; i <= 12 ; i++) {
         $('#semaforo-item-'+i+'').hide()
@@ -727,6 +735,7 @@ function inicioMovil() {
 
         if ( $('.tooltip-movil-inicio').css('display') === 'none') {
         $('.tooltip-movil-inicio').fadeIn()
+        $('.tooltip-movil-inicio').text(textTooltipDimension)
         $('.tooltip-movil-inicio').delay(2500).fadeOut()
         }
        
