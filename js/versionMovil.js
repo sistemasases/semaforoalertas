@@ -101,9 +101,20 @@ function screenResponsiveWebDesing() {
         $('.contact-information').text('Mayor información')
 
         $('.tooltip-movil-inicio').fadeIn()
+
+        $('#hamburger-movil').css({
+            'animation': 'colorHamburger 3.5s 1'
+        })
+        setTimeout(function () {
+        $('#hamburger-movil').addClass('filter-aqua')
+        },700)
+
         $('.tooltip-movil-inicio').text(textTooltipDimension)
         $('.tooltip-movil-inicio').delay(3000).fadeOut()
-
+        setTimeout(function () {
+        $('#hamburger-movil').removeClass('filter-aqua')
+        $('#hamburger-movil').attr({style: ''})
+        }, 3100)
     
 
         $('.menu-item').each(function (index,value) {
@@ -239,9 +250,18 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
              'width':'15rem'
         })
 
+        //apagar animaciones anteriores
+        $('.tooltip-movil-inicio').fadeIn().stop()
+
+        //animaciones en los tooltip
+        $('#hamburger-movil').attr({style: ''})
         $('.tooltip-movil-inicio').fadeIn()
+        $('#hamburger-tematica').addClass('filter-white')
         $('.tooltip-movil-inicio').text(" Haz clic en las Tematicas para inicar")
         $('.tooltip-movil-inicio').delay(1500).fadeOut()
+        setTimeout(function () {
+        $('#hamburger-tematica').removeClass('filter-white')
+        }, 2200)
 
         for (var i = 0 ; i <= 12 ; i++) {
         $('#semaforo-item-'+i+'').hide()
@@ -489,12 +509,19 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
         $('#tematicas-movil').removeClass('title-tematicas')
         $('#tematicas-movil').text(tituloTematica)
 
+        //apagar animaciones anteriores
+        $('.tooltip-movil-inicio').fadeOut().stop()
+
         //tooltip de ayuda
         if ($('.tooltip-movil').css('display') === 'none') {
+            $('#hamburger-tematica').addClass('filter-white')
             $('.tooltip-movil').fadeIn()
             $('.tooltip-movil').delay(3000).fadeOut()
 
         }
+        setTimeout(function () {
+        $('#hamburger-tematica').removeClass('filter-white')
+        }, 3000)
 
         quitRiskMovil()
 
@@ -723,6 +750,18 @@ function inicioMovil() {
         for (var i = 0 ; i <= 12 ; i++) {
         $('#semaforo-item-'+i+'').show()
         }
+        
+        $('#hamburger-movil').css({
+            'animation': 'colorHamburger 3.5s 1'
+        })
+        setTimeout(function () {
+        $('#hamburger-movil').addClass('filter-aqua')
+        },700)
+
+        setTimeout(function () {
+        $('#hamburger-movil').removeClass('filter-aqua')
+        $('#hamburger-movil').attr({style: ''})
+        }, 3100)
 
         if ( sizeScreenWidth  <= 500 &&  sizeScreenWidth  > 375) {
         $('.semaforo').css({'left': '-4%'})

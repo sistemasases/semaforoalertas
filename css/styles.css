@@ -1080,6 +1080,19 @@ button:focus {
     border-right: 15px solid transparent;
 }
 
+.filter-aqua {
+    filter: drop-shadow(0 -3px 2px rgb(128,128,128,100)) drop-shadow( 0 3px 4px rgb(128,128,128,13));
+}
+
+.filter-white {
+    filter: drop-shadow(0 -4px 3px rgb(255,255,255,100)) drop-shadow(0 6px 5px rgb(255,255,255,13));
+}
+
+@keyframes colorHamburger {
+  from {color: rgb(128,128,128,100);}
+  to {color: rgb(255,255,255,100);}
+}
+
 .title-thematic-movil-boton {
     position: absolute;
     right: 25%;
@@ -1102,7 +1115,6 @@ button:focus {
     font-size: 0.7em;
     line-height: 120%;
 }
-
 
 
 /* Style Mail for hreft*/
@@ -1391,7 +1403,7 @@ button:focus {
     }
     .title-tematicas {
         padding-top: 209px;
-        padding-right: 0.5em;
+        padding-right: 0.3em;
         font-size: 1.8rem;     
     }
     .dimensiones {
@@ -1555,7 +1567,7 @@ button:focus {
     }
     .title-tematicas {
         top: 0;
-        right: -0.5em;
+        right: -0.25em;
         padding-top: 150px;
         font-size: 1.7rem;     
     }
