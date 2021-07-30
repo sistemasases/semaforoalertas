@@ -1021,7 +1021,7 @@ button:focus {
 .tooltip-movil {
     display: none;
     position: fixed;
-    bottom: 17%;
+    bottom: 8em;
     left: 15%;
     width: 270px;
     height: 72px;
@@ -1029,7 +1029,7 @@ button:focus {
     line-height: 15px;
     text-align: justify;
     color: gray;
-    font-size: 1em;
+    font-size: 0.8em;
     font-family: Roboto, sans-serif;
     text-decoration: none;
     border-radius: 8px;
@@ -1091,6 +1091,11 @@ button:focus {
 @keyframes colorHamburger {
   from {color: rgb(128,128,128,100);}
   to {color: rgb(255,255,255,100);}
+}
+
+@keyframes colorGray {
+  from {color: rgb(255,255,255,100);}
+  to {color: rgb(128,128,128,100);}
 }
 
 .title-thematic-movil-boton {
@@ -1742,10 +1747,11 @@ button:focus {
         filter: invert(100%) sepia(6%) saturate(100%) hue-rotate(150deg) brightness(100%) contrast(100%) grayscale(1);
    }
    .tooltip-movil {
-       width: 150px;
-       line-height: 10px;
-       font-size: 0.7em;
-       padding: 4% 5%;
+        bottom: 6.5em;
+        width: 18em;
+        line-height: 1.2em;
+        font-size: 0.8em;
+        padding: 1em 0.8em;
    }
    .tooltip-movil-inicio {
        padding: 1.1em 1em;
