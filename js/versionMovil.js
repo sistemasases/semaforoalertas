@@ -104,6 +104,29 @@ function screenResponsiveWebDesing() {
         $('.tooltip-movil-inicio').text(textTooltipDimension)
         $('.tooltip-movil-inicio').delay(3000).fadeOut()
 
+        //animacion el hamburger de las dimensiones 
+        $('.hamburger-btn-movil').css({
+            'animation': 'colorHamburger 0.5s 1',
+            'color': 'rgb(255,255,255,100)'
+        })
+
+        setTimeout(function () {
+        $('#hamburger-movil').addClass('filter-aqua')
+        }, 250)
+
+        //quitar animacion con el tiempo
+        setTimeout(function () {
+
+        $('.hamburger-btn-movil').css({
+            'animation': 'colorGray 2.5s 1',
+            'color': 'rgb(128,128,128,100)'
+        })
+
+        }, 2900)
+
+        setTimeout(function () {
+        $('#hamburger-movil').removeClass('filter-aqua')    
+        }, 3000)
     
 
         $('.menu-item').each(function (index,value) {
@@ -239,9 +262,19 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
              'width':'15rem'
         })
 
+        //apagar animaciones anteriores
+        $('.tooltip-movil').fadeOut().stop()
+        $('.tooltip-movil-inicio').fadeIn().stop()
+
+        //animaciones en los tooltip
+        clearTimeout()           
         $('.tooltip-movil-inicio').fadeIn()
+        $('#hamburger-tematica').addClass('filter-white')
         $('.tooltip-movil-inicio').text(" Haz clic en las Tematicas para inicar")
         $('.tooltip-movil-inicio').delay(1500).fadeOut()
+        setTimeout(function () {
+        $('#hamburger-tematica').removeClass('filter-white')
+        }, 2200)
 
         for (var i = 0 ; i <= 12 ; i++) {
         $('#semaforo-item-'+i+'').hide()
@@ -467,8 +500,8 @@ function dimensionFuncionalityMovil(dimension , dimensionPrecionada) {
                   
                  }else {
                   $('.title-movil').css({
-                      'font-size': '0.7em',
-                      'right': '-1em'
+                      'font-size': '0.65em',
+                      'right': '-0.5em'
                   })    
                  }
 
@@ -489,17 +522,39 @@ function tematicasFuncionalityMovil(NombreDimension , tematicaPresionada, indexT
         $('#tematicas-movil').removeClass('title-tematicas')
         $('#tematicas-movil').text(tituloTematica)
 
+        //apagar animaciones anteriores
+        $('.tooltip-movil-inicio').fadeOut().stop()
+
         //tooltip de ayuda
         if ($('.tooltip-movil').css('display') === 'none') {
+            $('#hamburger-tematica').addClass('filter-white')
             $('.tooltip-movil').fadeIn()
             $('.tooltip-movil').delay(3000).fadeOut()
 
         }
+        setTimeout(function () {
+        $('#hamburger-tematica').removeClass('filter-white')
+        }, 3500)
 
         quitRiskMovil()
 
         semaforoMovil(tematicaPresionada)
         restarAnimateFooterMovil()
+
+        $('.tematica-nav').each(function(index,value) {
+
+         if ( ($(value).find('.tematica-nav-btn')).hasClass('active') ) {
+          tematicaDimension = ( ( $(this).parent() ).parent() ).parent()
+          navsInDimension = tematicaDimension.find('.tematica-nav')
+          indexTematica = navsInDimension.index(this)
+          $(value).attr({'id' : 'activo'})
+         }
+         else {
+         $(value).attr({'id' : ''})
+         }
+
+        })
+
         switch (NombreDimension) {
                
             case '#individual':
@@ -723,6 +778,30 @@ function inicioMovil() {
         for (var i = 0 ; i <= 12 ; i++) {
         $('#semaforo-item-'+i+'').show()
         }
+        
+        //animacion del hamburger
+        $('.hamburger-btn-movil').css({
+            'animation': 'colorHamburger 0.5s 1',
+            'color': 'rgb(255,255,255,100)'
+        })
+
+        setTimeout(function () {
+        $('#hamburger-movil').addClass('filter-aqua')
+        }, 250)
+
+        //quitar animacion del hamburger
+        setTimeout(function () {
+
+        $('.hamburger-btn-movil').css({
+            'animation': 'colorGray 2.5s 1',
+            'color': 'rgb(128,128,128,100)'
+        })
+
+        }, 2900)
+
+        setTimeout(function () {
+        $('#hamburger-movil').removeClass('filter-aqua')    
+        }, 3000)
 
         if ( sizeScreenWidth  <= 500 &&  sizeScreenWidth  > 375) {
         $('.semaforo').css({'left': '-4%'})
@@ -823,6 +902,9 @@ function quitRiskMovil() {
         'padding-bottom': '50%'
     })
     
+    $('.semaforo').find('.circle').each(function(e) {
+    $(this).removeClass('filter')
+    })
 
     if ( $('#inicio').hasClass('active')  ) {
 

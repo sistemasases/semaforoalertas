@@ -1021,7 +1021,7 @@ button:focus {
 .tooltip-movil {
     display: none;
     position: fixed;
-    bottom: 17%;
+    bottom: 8em;
     left: 15%;
     width: 270px;
     height: 72px;
@@ -1029,7 +1029,7 @@ button:focus {
     line-height: 15px;
     text-align: justify;
     color: gray;
-    font-size: 1em;
+    font-size: 0.8em;
     font-family: Roboto, sans-serif;
     text-decoration: none;
     border-radius: 8px;
@@ -1080,6 +1080,24 @@ button:focus {
     border-right: 15px solid transparent;
 }
 
+.filter-aqua {
+    filter: drop-shadow(0 -3px 2px rgb(128,128,128,100)) drop-shadow( 0 3px 4px rgb(128,128,128,13));
+}
+
+.filter-white {
+    filter: drop-shadow(0 -4px 3px rgb(255,255,255,100)) drop-shadow(0 6px 5px rgb(255,255,255,13));
+}
+
+@keyframes colorHamburger {
+  from {color: rgb(128,128,128,100);}
+  to {color: rgb(255,255,255,100);}
+}
+
+@keyframes colorGray {
+  from {color: rgb(255,255,255,100);}
+  to {color: rgb(128,128,128,100);}
+}
+
 .title-thematic-movil-boton {
     position: absolute;
     right: 25%;
@@ -1102,7 +1120,6 @@ button:focus {
     font-size: 0.7em;
     line-height: 120%;
 }
-
 
 
 /* Style Mail for hreft*/
@@ -1391,7 +1408,7 @@ button:focus {
     }
     .title-tematicas {
         padding-top: 209px;
-        padding-right: 0.15em;
+        padding-right: 0.3em;
         font-size: 1.8rem;     
     }
     .dimensiones {
@@ -1555,7 +1572,7 @@ button:focus {
     }
     .title-tematicas {
         top: 0;
-        right: 0.1em;
+        right: -0.25em;
         padding-top: 150px;
         font-size: 1.7rem;     
     }
@@ -1730,10 +1747,11 @@ button:focus {
         filter: invert(100%) sepia(6%) saturate(100%) hue-rotate(150deg) brightness(100%) contrast(100%) grayscale(1);
    }
    .tooltip-movil {
-       width: 150px;
-       line-height: 10px;
-       font-size: 0.7em;
-       padding: 4% 5%;
+        bottom: 6.5em;
+        width: 18em;
+        line-height: 1.2em;
+        font-size: 0.8em;
+        padding: 1em 0.8em;
    }
    .tooltip-movil-inicio {
        padding: 1.1em 1em;
