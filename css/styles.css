@@ -1513,7 +1513,7 @@ button:focus {
         height: 32vh;
     }
     .section {
-        justify-content: end;
+        justify-content: flex-start;
         padding-top: 40% !important;
         padding-bottom: 50%;
         padding-left: 0;
@@ -1720,7 +1720,7 @@ button:focus {
        
      }
     .section {
-        justify-content: end;
+        justify-content: flex-start;
         padding-top: 40% !important;
         padding-bottom: 50%;
         padding-left: 0;
